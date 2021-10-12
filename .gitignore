@@ -1,0 +1,15 @@
+/target/classes/nl/hsleiden/model/Answer.class
+/target/classes/nl/hsleiden/controller/AnswerController.class
+/target/classes/nl/hsleiden/view/AnswerView.class
+/target/classes/nl/hsleiden/model/Explanation.class
+/target/classes/nl/hsleiden/controller/ExplanationController.class
+/target/classes/nl/hsleiden/view/ExplanationView.class
+/target/classes/nl/hsleiden/model/Question.class
+/target/classes/nl/hsleiden/controller/QuestionController.class
+/target/classes/nl/hsleiden/view/QuestionView.class
+/target/classes/nl/hsleiden/model/Result.class
+/target/classes/nl/hsleiden/controller/ResultController.class
+/target/classes/nl/hsleiden/view/ResultView.class
+/target/classes/nl/hsleiden/model/Video.class
+/target/classes/nl/hsleiden/controller/VideoController.class
+/target/classes/nl/hsleiden/view/VideoView.class
