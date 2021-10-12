@@ -1,5 +1,5 @@
 .anchor{
-    -fx-background-image: url("../images/beginscherm10.png");
+    -fx-background-image: url("../images/defBegin.png");
     -fx-background-size: 1280px 720px;
 }
 
@@ -13,4 +13,5 @@
 .text-area, .text-area .viewport, .text-area .content {
     -fx-background-color: transparent ;
     -fx-text-fill: white;
+    -fx-font-weight: bold;
 }

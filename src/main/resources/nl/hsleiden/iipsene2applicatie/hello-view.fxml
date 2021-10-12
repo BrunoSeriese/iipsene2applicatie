@@ -7,19 +7,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="anchor" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.hsleiden.controller.MainController">
    <children>
-      <Button alignment="TOP_LEFT" layoutX="107.0" layoutY="588.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Klik Hier   ">
+      <Button alignment="TOP_LEFT" layoutX="108.0" layoutY="514.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Klik Hier   ">
          <font>
             <Font name="Neue Haas Grotesk Text Pro Bold" size="14.0" />
          </font>
       </Button>
-      <TextArea layoutX="86.0" layoutY="289.0" prefHeight="245.0" prefWidth="737.0" style="-fx-border-color: transparant;" styleClass="textarea" stylesheets="@../css/main.css" text="Welkom bij de subsidiewijzer van de SVDJ.&#10;Doormiddel van deze subsidiewijzer krijg je&#10;een duidelijk beeld over welke subsidie jij moet aanvragen." wrapText="true">
+      <TextArea editable="false" focusTraversable="false" layoutX="92.0" layoutY="238.0" mouseTransparent="true" prefHeight="245.0" prefWidth="737.0" styleClass="textarea" stylesheets="@../css/main.css" text="Welkom bij de subsidiewijzer van de SVDJ.&#10;Doormiddel van deze subsidiewijzer krijg je&#10;een duidelijk beeld over welke subsidie jij moet aanvragen." wrapText="true">
          <font>
             <Font name="Neue Haas Grotesk Text Pro Medium" size="30.0" />
          </font>
       </TextArea>
-      <TextArea layoutX="86.0" layoutY="224.0" prefHeight="65.0" prefWidth="737.0" style="-fx-border-color: transparant;" styleClass="textarea" stylesheets="@../css/main.css" text=" Subsidiewijzer&#10;" wrapText="true">
+      <TextArea editable="false" layoutX="92.0" layoutY="170.0" mouseTransparent="true" prefHeight="65.0" prefWidth="737.0" style="-fx-border-color: transparant;" styleClass="textarea" stylesheets="@../css/main.css" text="  Subsidiewijzer&#10;" wrapText="true">
          <font>
-            <Font name="Neue Haas Grotesk Text Pro Medium" size="20.0" />
+            <Font name="Neue Haas Grotesk Text Pro Medium" size="17.0" />
          </font>
       </TextArea>
    </children>
