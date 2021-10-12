@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>nl.hsleiden.iipsene2applicatie/nl.hsleiden.iipsene2applicatie.HelloApplication
+                            <mainClass>nl.hsleiden.iipsene2applicatie/nl.hsleiden.iipsene2applicatie.MainApplication
                             </mainClass>
                         </configuration>
                     </execution>
