@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="iipsene2applicatie" target="17" />
+      <module name="iipsene2applicatie" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>
