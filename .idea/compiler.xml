@@ -9,5 +9,8 @@
         <module name="iipsene2applicatie" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="iipsene2applicatie" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
