@@ -18,7 +18,7 @@ public class MainView implements MainObserver {
 
     @FXML
     protected void onNextButtonClick(ActionEvent event) throws IOException {
-        mainController.switchToNextScreen(event,"Uitleg.fxml");
+        mainController.switchToNextScreen(event,"Explanation.fxml");
     }
 
     @Override

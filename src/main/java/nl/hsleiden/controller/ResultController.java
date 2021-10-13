@@ -20,6 +20,7 @@ public class ResultController {
     public ResultController(ResultDAO resultDAO, ResultService resultService) {
         this.resultDAO = resultDAO;
         this.resultService = resultService;
+
         sceneController = SceneController.getInstance();
     }
 
@@ -32,6 +33,7 @@ public class ResultController {
 
     public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
         sceneController.switchToNextScreen(event, fileName);
+
     }
 
     public void closeGame(){

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
 
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.hsleiden.view.VideoView">
-
+   <children>
+      <WebView fx:id="webViewContainer" layoutX="142.0" layoutY="92.0" prefHeight="503.0" prefWidth="1024.0" />
+   </children>
 </AnchorPane>
