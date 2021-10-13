@@ -1,4 +1,11 @@
 package nl.hsleiden.view;
 
-public class VideoView {
+import nl.hsleiden.observer.VideoObserver;
+import nl.hsleiden.subject.VideoSubject;
+
+public class VideoView implements VideoObserver {
+    @Override
+    public void update(VideoSubject state) {
+
+    }
 }
