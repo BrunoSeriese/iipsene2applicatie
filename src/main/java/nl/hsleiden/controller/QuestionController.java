@@ -13,4 +13,11 @@ public class QuestionController {
         }
         return questionController;
     }
+
+    public void getPreviousQuestion(){
+        //TODO spreek met de historyService en haal het gegeven antwoord weg
+    }
+    public void getNextQuestion(){
+        //TODO spreek met de historyservice en geef het antwoord door
+    }
 }

@@ -1,3 +1,5 @@
+/target
+/.idea
 /target/classes/nl/hsleiden/model/Answer.class
 /target/classes/nl/hsleiden/controller/AnswerController.class
 /target/classes/nl/hsleiden/view/AnswerView.class
@@ -13,13 +15,4 @@
 /target/classes/nl/hsleiden/model/Video.class
 /target/classes/nl/hsleiden/controller/VideoController.class
 /target/classes/nl/hsleiden/view/VideoView.class
-target/
-*.class
-*.jar
-*.war
-*.ear
-*.logs
-*.iml
-.idea/
-.eclipse
-*/target/*
+/target/classes/nl/hsleiden/controller/SceneController.class

@@ -18,6 +18,40 @@
     -fx-font-size: 14px;
 }
 
+.check-box {
+    /* default properties */
+    selected-box-color: white;
+    box-color: white;
+    mark-color: black;
+}
+
+.check-box:selected > .box {
+    /* background color for selected checkbox */
+    -fx-background-color: selected-box-color;
+}
+
+.check-box > .box {
+    /* background color of unselected checkbox */
+    -fx-background-color: box-color;
+}
+
+.check-box:selected > .box > .mark,
+.check-box:indeterminate  > .box > .mark {
+    /* modify mark color */
+    -fx-background-color: mark-color;
+}
+
+.radio{
+        /* -fx-border-color: lightblue;
+        -fx-font-size: 20;
+        -fx-border-insets: -5;
+        -fx-border-radius: 5;
+        -fx-border-style: solid;
+        -fx-border-width: 2; */
+        visibility: false;
+}
+
+
 .text-area, .text-area .viewport, .text-area .content {
     -fx-background-color: transparent ;
     -fx-text-fill: white;
