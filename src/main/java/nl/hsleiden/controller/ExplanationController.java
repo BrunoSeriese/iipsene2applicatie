@@ -9,6 +9,7 @@ public class ExplanationController {
     private final ExplanationService explanationService;
     private final SceneController sceneController;
     private final ContentController contentController;
+
     public ExplanationController(ExplanationDAO explanationDAO,
                                  ExplanationService explanationService) {
         this.explanationDAO = explanationDAO;
@@ -18,14 +19,14 @@ public class ExplanationController {
     }
 
 
-
     public static ExplanationController getInstance() {
-        if(explanationController == null) {
+        if (explanationController == null) {
             explanationController = new ExplanationController(new ExplanationDAO(), new ExplanationService());
         }
         return explanationController;
     }
-    public void sendNextContent(){
-    contentController.nextContent();
+
+    public void sendNextContent() {
+        contentController.nextContent();
     }
 }
