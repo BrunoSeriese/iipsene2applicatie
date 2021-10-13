@@ -6,17 +6,17 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="anchorUitleg" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.hsleiden.view.ExplanationView">
-   <TextArea editable="false" focusTraversable="false" layoutX="90.0" layoutY="277.0" mouseTransparent="true" prefHeight="354.0" prefWidth="712.0" styleClass="text-area" stylesheets="@../css/main.css" text="Hier vind je alle subsidieregelingen van het Stimuleringsfonds voor de Journalistiek. De meeste regelingen hebben een vaste aanvraagperiode. Sommige regelingen kunnen doorlopend aangevraagd worden. Subsidie kan onder andere worden aangevraagd voor journalistieke innovatie, professionalisering van lokale publieke omroepen of voor het opzetten of uitbreiden van onderzoeksredacties. &#10;&#10;Raadpleeg de afzonderlijke pagina’s van de subsidieregelingen voor extra informatie over de aanvraagperiode, voorwaarden en inhoudelijke criteria. Bekijk hieronder het overzicht. " wrapText="true">
+   <TextArea editable="false" focusTraversable="false" layoutX="96.0" layoutY="217.0" mouseTransparent="true" prefHeight="354.0" prefWidth="712.0" styleClass="text-area" stylesheets="@../css/main.css" text="De meeste regelingen hebben een vaste aanvraagperiode, alhoewel sommige regelingen ook doorlopend aangevraagd kunnen worden. &#10;&#10;Een subsidie kan o.a. worden aangevraagd voor journalistieke innovatie, professionalisering van lokale publieke omroepen en voor het opzetten/uitbreiden van onderzoeksredacties. &#10;&#10;Raadpleeg de afzonderlijke pagina’s van de subsidieregelingen voor extra informatie over de aanvraagperiode, voorwaarden en inhoudelijke criteria. " wrapText="true">
       <font>
          <Font name="Neue Haas Grotesk Text Pro" size="20.0" />
       </font>
    </TextArea>
-   <TextArea editable="false" focusTraversable="false" layoutX="90.0" layoutY="226.0" mouseTransparent="true" prefHeight="42.0" prefWidth="202.0" styleClass="text-area" stylesheets="@../css/main.css" text="Uitleg">
+   <TextArea editable="false" focusTraversable="false" layoutX="92.0" layoutY="156.0" mouseTransparent="true" prefHeight="52.0" prefWidth="112.0" styleClass="text-area" stylesheets="@../css/main.css" text="Uitleg">
       <font>
-         <Font name="Neue Haas Grotesk Text Pro" size="17.0" />
+         <Font size="26.0" />
       </font>
    </TextArea>
-   <Button alignment="TOP_LEFT" layoutX="640.0" layoutY="638.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Volgende">
+   <Button alignment="TOP_LEFT" layoutX="630.0" layoutY="628.0" mnemonicParsing="false" onAction="#nextContent" prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Volgende">
       <font>
          <Font name="Neue Haas Grotesk Text Pro Bold" size="14.0" />
       </font>

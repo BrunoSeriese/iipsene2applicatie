@@ -9,11 +9,13 @@ import java.io.IOException;
 
 public class MainApplication extends Application {
     @Override
+
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Question.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setTitle("Subsidiewijzer SVDJ");
         stage.setResizable(false);
+        stage.setFullScreen(false);
         stage.setScene(scene);
         stage.show();
     }

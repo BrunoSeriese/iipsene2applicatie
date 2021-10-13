@@ -14,7 +14,7 @@ public class Result implements Content, ResultSubject {
     private Answer answer;
 
     public Result(int id, String value) {
-
+        this.value = value;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class Result implements Content, ResultSubject {
 
     @Override
     public String getValue() {
-        return null;
+        return value;
     }
 
     @Override

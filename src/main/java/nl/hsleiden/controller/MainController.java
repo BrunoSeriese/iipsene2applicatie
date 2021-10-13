@@ -8,7 +8,7 @@ public class MainController {
     private static MainController mainController;
     private final SceneController sceneController;
 
-    public MainController(){
+    public MainController() {
         sceneController = SceneController.getInstance();
     }
 
@@ -20,6 +20,6 @@ public class MainController {
     }
 
     public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
-        sceneController.switchToNextScreen(event,fileName);
+        sceneController.switchToNextScreen(event, fileName);
     }
 }
