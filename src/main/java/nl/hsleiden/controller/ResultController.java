@@ -1,10 +1,16 @@
 package nl.hsleiden.controller;
 
-import nl.hsleiden.view.View;
+public class ResultController {
+    private static ResultController resultController;
 
-public class ResultController implements Controller{
-    @Override
-    public void registerObserver(View v) {
+    public ResultController() {
 
+    }
+
+    public static ResultController getInstance() {
+        if(resultController == null) {
+            resultController = new ResultController();
+        }
+        return resultController;
     }
 }

@@ -1,10 +1,16 @@
 package nl.hsleiden.controller;
 
-import nl.hsleiden.view.View;
+public class ExplanationController {
+    private static ExplanationController explanationController;
 
-public class ExplanationController implements Controller{
-    @Override
-    public void registerObserver(View v) {
+    public ExplanationController() {
 
+    }
+
+    public static ExplanationController getInstance() {
+        if(explanationController == null) {
+            explanationController = new ExplanationController();
+        }
+        return explanationController;
     }
 }

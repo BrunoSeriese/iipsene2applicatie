@@ -3,18 +3,17 @@ package nl.hsleiden.view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import nl.hsleiden.controller.MainController;
-import nl.hsleiden.shared.Observable;
-import nl.hsleiden.shared.Observer;
+import nl.hsleiden.observer.MainObserver;
+import nl.hsleiden.subject.MainSubject;
 
 import java.io.IOException;
 
-public class MainView implements View, Observer {
+public class MainView implements MainObserver {
 
-    MainController mainController;
+    private final MainController mainController;
 
     public MainView(){
         mainController = MainController.getInstance();
-        mainController.registerObserver(this);
     }
 
     @FXML
@@ -23,7 +22,7 @@ public class MainView implements View, Observer {
     }
 
     @Override
-    public void update(Observable model) {
+    public void update(MainSubject state) {
 
     }
 }

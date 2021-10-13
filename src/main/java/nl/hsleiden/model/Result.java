@@ -1,21 +1,49 @@
 package nl.hsleiden.model;
 
-import nl.hsleiden.shared.Observable;
-import nl.hsleiden.view.View;
+import nl.hsleiden.observer.Observer;
+import nl.hsleiden.observer.ResultObserver;
+import nl.hsleiden.subject.ResultSubject;
 
-public class Result implements Observable {
-    @Override
-    public void registerObserver(View v) {
+import java.util.ArrayList;
+
+public class Result implements Content, ResultSubject {
+    private final ArrayList<Observer<ResultSubject>> observers = new ArrayList<>();
+
+    private int id;
+    private String value;
+    private Answer answer;
+
+    public Result(int id, String value) {
 
     }
 
     @Override
-    public void unregisterObserver(View v) {
-
+    public int getId() {
+        return 0;
     }
 
     @Override
-    public void notifyObserver() {
+    public String getValue() {
+        return null;
+    }
 
+    @Override
+    public Answer getAnswer() {
+        return null;
+    }
+
+    @Override
+    public void registerObserver(Observer<ResultSubject> observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void unregisterObserver(Observer<ResultSubject> observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        observers.forEach(observer -> observer.update(this));
     }
 }

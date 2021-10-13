@@ -8,18 +8,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import nl.hsleiden.iipsene2applicatie.MainApplication;
-import nl.hsleiden.view.View;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class SceneController implements Controller{
+public class SceneController {
+    private static SceneController sceneController;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-    static SceneController sceneController;
 
     public SceneController(){
 
@@ -53,10 +51,5 @@ public class SceneController implements Controller{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    @Override
-    public void registerObserver(View v) {
-
     }
 }

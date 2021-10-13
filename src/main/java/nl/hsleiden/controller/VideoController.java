@@ -1,10 +1,18 @@
 package nl.hsleiden.controller;
 
-import nl.hsleiden.view.View;
+import nl.hsleiden.model.Video;
 
-public class VideoController implements Controller{
-    @Override
-    public void registerObserver(View v) {
+public class VideoController {
+    private static VideoController videoController;
 
+    public VideoController() {
+
+    }
+
+    public static VideoController getInstance() {
+        if(videoController == null) {
+            videoController = new VideoController();
+        }
+        return videoController;
     }
 }

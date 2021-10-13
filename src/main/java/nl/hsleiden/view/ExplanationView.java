@@ -1,11 +1,11 @@
 package nl.hsleiden.view;
 
-import nl.hsleiden.shared.Observable;
-import nl.hsleiden.shared.Observer;
+import nl.hsleiden.observer.ExplanationObserver;
+import nl.hsleiden.subject.ExplanationSubject;
 
-public class ExplanationView implements View, Observer {
+public class ExplanationView implements ExplanationObserver {
     @Override
-    public void update(Observable model) {
+    public void update(ExplanationSubject state) {
 
     }
 }

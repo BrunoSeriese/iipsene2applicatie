@@ -1,11 +1,11 @@
 package nl.hsleiden.view;
 
-import nl.hsleiden.shared.Observable;
-import nl.hsleiden.shared.Observer;
+import nl.hsleiden.observer.AnswerObserver;
+import nl.hsleiden.subject.AnswerSubject;
 
-public class AnswerView implements View, Observer {
+public class AnswerView implements AnswerObserver {
     @Override
-    public void update(Observable model) {
+    public void update(AnswerSubject state) {
 
     }
 }
