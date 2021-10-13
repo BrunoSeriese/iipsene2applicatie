@@ -8,11 +8,13 @@ public class ExplanationController {
     private final ExplanationDAO explanationDAO;
     private final ExplanationService explanationService;
     private final SceneController sceneController;
+    private final ContentController contentController;
     public ExplanationController(ExplanationDAO explanationDAO,
                                  ExplanationService explanationService) {
         this.explanationDAO = explanationDAO;
         this.explanationService = explanationService;
         sceneController = SceneController.getInstance();
+        contentController = ContentController.getInstance();
     }
 
 
@@ -24,6 +26,6 @@ public class ExplanationController {
         return explanationController;
     }
     public void sendNextContent(){
-    System.out.println("nu krijg je meer te zien");
+    contentController.nextContent();
     }
 }
