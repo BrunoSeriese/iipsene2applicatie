@@ -24,7 +24,7 @@ public class HistoryService {
     public static Map<Content, Answer> getLast() {
 
 
-        return history.get(0);
+        return history.get(history.size()-1);
     }
   public void remove(int id){
 
