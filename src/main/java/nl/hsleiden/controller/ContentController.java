@@ -28,7 +28,7 @@ public class ContentController {
         Map<Content, Answer> historyContent = historyService.getLast();
         Content content = (Content) historyContent.keySet().toArray()[0];
 
-        if ( content instanceof Question) {
+        if (content instanceof Question) {
             System.out.println("vraag");
         } else if (content instanceof Video) {
             System.out.println("video");
