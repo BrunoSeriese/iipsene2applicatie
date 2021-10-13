@@ -1,6 +1,7 @@
 module nl.hsleiden.iipsene2applicatie {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.graphics;
 
 
     opens nl.hsleiden.iipsene2applicatie to javafx.fxml;
