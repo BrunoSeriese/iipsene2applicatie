@@ -13,6 +13,7 @@ public class MainApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setTitle("Subsidiewijzer SVDJ");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

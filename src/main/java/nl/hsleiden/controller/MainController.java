@@ -1,15 +1,8 @@
 package nl.hsleiden.controller;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import java.io.IOException;
 import javafx.event.ActionEvent;
-import javafx.stage.Stage;
-import nl.hsleiden.iipsene2applicatie.MainApplication;
+
+import java.io.IOException;
 
 public class MainController {
     private static MainController mainController;

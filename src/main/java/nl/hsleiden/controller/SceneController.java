@@ -1,6 +1,5 @@
 package nl.hsleiden.controller;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,7 +9,6 @@ import javafx.stage.Stage;
 import nl.hsleiden.iipsene2applicatie.MainApplication;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class SceneController {
     private static SceneController sceneController;

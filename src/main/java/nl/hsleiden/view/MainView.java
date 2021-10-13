@@ -15,8 +15,10 @@ public class MainView {
     }
 
     @FXML
-    protected void onNextButtonClick(ActionEvent event) throws IOException {
+    protected void onStartButtonClick(ActionEvent event) throws IOException {
         mainController.switchToNextScreen(event,"Uitleg.fxml");
     }
+
+
 
 }
