@@ -1,7 +1,10 @@
 package nl.hsleiden.controller;
 
+import javafx.event.ActionEvent;
 import nl.hsleiden.DAO.ExplanationDAO;
 import nl.hsleiden.service.ExplanationService;
+
+import java.io.IOException;
 
 public class ExplanationController {
     private static ExplanationController explanationController;
@@ -28,5 +31,9 @@ public class ExplanationController {
 
     public void sendNextContent() {
         contentController.nextContent();
+    }
+
+    public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
+        sceneController.switchToNextScreen(event, fileName);
     }
 }
