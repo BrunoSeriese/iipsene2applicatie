@@ -7,23 +7,24 @@ import java.util.Map;
 
 public class ContentController {
     private static ContentController contentController;
+    private final HistoryService historyService;
     private final SceneController sceneController;
 
-    public ContentController() {
+    public ContentController(HistoryService historyService){
+        this.historyService = historyService;
         sceneController = SceneController.getInstance();
     }
 
-    HistoryService historyService = new HistoryService();
 
     public static ContentController getInstance() {
         if (contentController == null) {
-            contentController = new ContentController();
+            contentController = new ContentController(new HistoryService());
         }
         return contentController;
     }
 
     public void nextContent() {
-        historyService.add(new Explanation(1, "checkme"), new Answer(1, "world", 1, 1));
+        historyService.add(new Explanation(1,"checkme"), new Answer(1,"world", 1,1));
         Map<Content, Answer> historyContent = historyService.getLast();
         Content content = (Content) historyContent.keySet().toArray()[0];
 
@@ -31,9 +32,9 @@ public class ContentController {
             System.out.println("vraag");
         } else if (content instanceof Video) {
             System.out.println("video");
-        } else if (content instanceof Result) {
+        } else if (content instanceof Result){
             System.out.println("resultaten");
-        } else if (content instanceof Explanation) {
+        } else if (content instanceof Explanation){
             System.out.println("uitleg");
         }
 
