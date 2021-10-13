@@ -7,6 +7,7 @@ import nl.hsleiden.service.HistoryService;
 
 public class QuestionController {
     private static QuestionController questionController;
+    private static ContentController contentController;
     private final QuestionDAO questionDAO;
     private final QuestionService questionService;
 
@@ -33,6 +34,7 @@ public class QuestionController {
     }
     public void getNextContent(){
         //TODO spreek met de historyservice en geef de volgende content door
+        contentController.nextContent();
 
     }
     public void showCurrentQuestion(){

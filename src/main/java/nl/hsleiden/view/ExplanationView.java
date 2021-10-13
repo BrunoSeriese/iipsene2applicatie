@@ -8,4 +8,7 @@ public class ExplanationView implements ExplanationObserver {
     public void update(ExplanationSubject state) {
 
     }
+    public void nextContent(){
+        System.out.println("next content is coming!");
+    }
 }
