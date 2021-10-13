@@ -1,9 +1,26 @@
 package nl.hsleiden.view;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
 public class QuestionView implements QuestionObserver {
+    @FXML
+    RadioButton Button1;
+    @FXML
+    RadioButton Button2;
+    @FXML
+    RadioButton Button3;
+    @FXML
+    RadioButton Button4;
+
+    @FXML
+    public void onbtnclick(){
+        System.out.println("HET WERKT");
+    }
+
     @Override
     public void update(QuestionSubject state) {
 

@@ -9,7 +9,7 @@
             prefWidth="1280.0" styleClass="anchorMain" stylesheets="@../css/main.css"
             xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="nl.hsleiden.view.MainView">
-    <Button alignment="TOP_LEFT" layoutX="112.0" layoutY="488.0" mnemonicParsing="false" onAction="#onStartButtonClick"
+    <Button alignment="TOP_LEFT" layoutX="112.0" layoutY="488.0" mnemonicParsing="false" onAction="#onNextButtonClick"
             prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Start">
         <font>
             <Font name="Neue Haas Grotesk Text Pro Bold" size="14.0"/>

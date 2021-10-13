@@ -21,6 +21,4 @@
          <Font name="Neue Haas Grotesk Text Pro Bold" size="14.0" />
       </font>
    </Button>
-   <Button alignment="TOP_LEFT" layoutX="640.0" layoutY="595.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Button">
-   </Button>
 </AnchorPane>
