@@ -10,10 +10,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainApplication extends Application {
-    @Override
 
+    @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Video.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setOnCloseRequest(evt -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

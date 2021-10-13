@@ -40,11 +40,6 @@
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
-            <artifactId>javafx-media</artifactId>
-            <version>15</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
             <artifactId>javafx-web</artifactId>
             <version>11.0.1</version>
         </dependency>

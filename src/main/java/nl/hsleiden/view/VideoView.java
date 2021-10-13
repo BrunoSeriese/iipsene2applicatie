@@ -14,7 +14,7 @@ public class VideoView implements VideoObserver, Initializable {
 
     private final VideoController videoController;
 
-    public VideoView() throws InterruptedException {
+    public VideoView() {
         videoController = VideoController.getInstance();
 
     }
