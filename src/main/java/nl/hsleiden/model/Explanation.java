@@ -1,6 +1,13 @@
 package nl.hsleiden.model;
 
-public class Explanation implements Content {
+import nl.hsleiden.observer.Observer;
+import nl.hsleiden.subject.ExplanationSubject;
+
+import java.util.ArrayList;
+
+public class Explanation implements Content, ExplanationSubject {
+    private final ArrayList<Observer<ExplanationSubject>> observers = new ArrayList<>();
+
     private int id;
     private String value;
     private Answer answer;
@@ -22,5 +29,20 @@ public class Explanation implements Content {
     @Override
     public Answer getAnswer() {
         return null;
+    }
+
+    @Override
+    public void registerObserver(Observer<ExplanationSubject> observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void unregisterObserver(Observer<ExplanationSubject> observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        observers.forEach(observer -> observer.update(this));
     }
 }
