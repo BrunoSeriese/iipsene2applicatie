@@ -1,18 +1,22 @@
 package nl.hsleiden.controller;
 
 import nl.hsleiden.DAO.QuestionDAO;
+import nl.hsleiden.service.QuestionService;
 
 public class QuestionController {
     private static QuestionController questionController;
     private final QuestionDAO questionDAO;
+    private final QuestionService questionService;
 
-    public QuestionController(QuestionDAO questionDAO) {
+    public QuestionController(QuestionDAO questionDAO,
+                              QuestionService questionService) {
         this.questionDAO = questionDAO;
+        this.questionService = questionService;
     }
 
     public static QuestionController getInstance() {
         if(questionController == null) {
-            questionController = new QuestionController(new QuestionDAO());
+            questionController = new QuestionController(new QuestionDAO(), new QuestionService());
         }
         return questionController;
     }
