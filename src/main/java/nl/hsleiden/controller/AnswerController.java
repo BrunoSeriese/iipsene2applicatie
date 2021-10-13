@@ -1,6 +1,9 @@
 package nl.hsleiden.controller;
 
-public class AnswerController {
+import nl.hsleiden.view.View;
+
+public class AnswerController implements Controller {
+
     static AnswerController answerController;
 
     public AnswerController(){
@@ -12,5 +15,10 @@ public class AnswerController {
             answerController = new AnswerController();
         }
         return answerController;
+    }
+
+    @Override
+    public void registerObserver(View v) {
+
     }
 }

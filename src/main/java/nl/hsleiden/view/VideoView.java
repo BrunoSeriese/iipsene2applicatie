@@ -1,4 +1,11 @@
 package nl.hsleiden.view;
 
-public class VideoView {
+import nl.hsleiden.shared.Observable;
+import nl.hsleiden.shared.Observer;
+
+public class VideoView implements View, Observer {
+    @Override
+    public void update(Observable model) {
+
+    }
 }

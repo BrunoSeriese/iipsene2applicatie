@@ -1,4 +1,10 @@
 package nl.hsleiden.controller;
 
-public class ResultController {
+import nl.hsleiden.view.View;
+
+public class ResultController implements Controller{
+    @Override
+    public void registerObserver(View v) {
+
+    }
 }

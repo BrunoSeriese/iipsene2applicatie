@@ -1,4 +1,10 @@
 package nl.hsleiden.controller;
 
-public class VideoController {
+import nl.hsleiden.view.View;
+
+public class VideoController implements Controller{
+    @Override
+    public void registerObserver(View v) {
+
+    }
 }
