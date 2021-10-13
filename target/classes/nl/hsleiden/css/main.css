@@ -1,5 +1,10 @@
-.anchor{
+.anchorMain{
     -fx-background-image: url("../images/defBegin.png");
+    -fx-background-size: 1280px 720px;
+}
+
+.anchorUitleg{
+    -fx-background-image: url("../images/uitleg.png");
     -fx-background-size: 1280px 720px;
 }
 

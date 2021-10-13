@@ -18,6 +18,34 @@ public class SceneController {
     private Scene scene;
     private Parent root;
 
+    static SceneController sceneController;
+
+    public SceneController(){
+
+    }
+
+    /**
+     * With the getInstance() method, we can always make sure that there is only one instance running of this
+     * controller. To use this method, create an empty SceneController variable outside the constructor of another
+     * class. After that call the getInstance() method in the constructor like the example below.
+     * @<code>
+     *     SceneController sceneController;
+     *
+     *     public DifferentClass(){
+     *         sceneController = SceneController.getInstance();
+     *     }
+     * </code>
+     *
+     * @author Hicham El Faquir
+     */
+
+    public static SceneController getInstance() {
+        if (sceneController == null) {
+            sceneController = new SceneController();
+        }
+        return sceneController;
+    }
+
     public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
         root = FXMLLoader.load(MainApplication.class.getResource(fileName));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

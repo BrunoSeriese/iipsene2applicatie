@@ -1,23 +1,33 @@
 package nl.hsleiden.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.stage.Stage;
+import nl.hsleiden.iipsene2applicatie.MainApplication;
+
 public class MainController {
-    @FXML
-    private Label welcomeText;
 
-    @FXML
-    private TextArea myText;
-    SceneController sceneController = new SceneController();
+    SceneController sceneController;
+    static MainController mainController;
 
+    public MainController(){
+        sceneController = SceneController.getInstance();
+    }
 
-    @FXML
-    protected void onHelloButtonClick(ActionEvent event) throws IOException {
-        //TODO zet hier een verwijzing naar het openen van het volgende scherm
+    public static MainController getInstance() {
+        if (mainController == null) {
+            mainController = new MainController();
+        }
+        return mainController;
+    }
 
-        sceneController.switchToNextScreen(event,"hello-view.fxml");
+    public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
+        sceneController.switchToNextScreen(event,fileName);
     }
 }
