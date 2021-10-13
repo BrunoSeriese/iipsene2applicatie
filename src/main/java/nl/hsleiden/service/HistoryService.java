@@ -8,30 +8,35 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HistoryService {
-    private final static ArrayList<Map<Content, Answer>> history = new ArrayList<>();
-
+    private final ArrayList<Map<Content, Answer>> history = new ArrayList<>();
 
     public HistoryService(){
 
     }
 
-    public static void add(Content content, Answer answer) {
-        Map<Content, Answer> hc = new HashMap<>();
-        hc.put(content, answer);
-        history.add(hc);
+    public void add(Content content, Answer answer) {
+        Map<Content, Answer> history = new HashMap<>();
+        history.put(content, answer);
+        this.history.add(history);
     }
 
-    public static Map<Content, Answer> getLast() {
-
-
-        return history.get(history.size()-1);
+    public void remove(int id) {
+        history.remove(id);
     }
-  public void remove(int id){
 
-  }
+    public void removeLast() {
+        history.remove(history.size() - 1);
+    }
 
-  public ArrayList<Map<Content, Answer>> get(){
-    return history;
-  }
+    public Map<Content, Answer> get(int id) {
+        return history.get(id);
+    }
 
+    public ArrayList<Map<Content, Answer>> getHistory() {
+        return history;
+    }
+
+    public Map<Content, Answer> getLast() {
+        return history.get(history.size() - 1);
+    }
 }
