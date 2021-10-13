@@ -7,14 +7,18 @@ import java.util.Map;
 
 public class ContentController {
     private static ContentController contentController;
+    private final HistoryService historyService;
     private final SceneController sceneController;
-    public ContentController(){
+
+    public ContentController(HistoryService historyService){
+        this.historyService = historyService;
         sceneController = SceneController.getInstance();
     }
-    HistoryService historyService = new HistoryService();
+
+
     public static ContentController getInstance() {
         if (contentController == null) {
-            contentController = new ContentController();
+            contentController = new ContentController(new HistoryService());
         }
         return contentController;
     }
