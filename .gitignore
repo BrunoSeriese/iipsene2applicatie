@@ -1,3 +1,4 @@
+/target
 /target/classes/nl/hsleiden/model/Answer.class
 /target/classes/nl/hsleiden/controller/AnswerController.class
 /target/classes/nl/hsleiden/view/AnswerView.class
