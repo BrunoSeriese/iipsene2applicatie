@@ -13,3 +13,4 @@
 /target/classes/nl/hsleiden/model/Video.class
 /target/classes/nl/hsleiden/controller/VideoController.class
 /target/classes/nl/hsleiden/view/VideoView.class
+/target/classes/nl/hsleiden/controller/SceneController.class
