@@ -18,7 +18,6 @@ public class ExplanationController {
         contentController = ContentController.getInstance();
     }
 
-
     public static ExplanationController getInstance() {
         if (explanationController == null) {
             explanationController = new ExplanationController(new ExplanationDAO(), new ExplanationService());

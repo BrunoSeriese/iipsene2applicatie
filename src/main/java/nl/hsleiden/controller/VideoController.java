@@ -1,5 +1,6 @@
 package nl.hsleiden.controller;
 
+import javafx.scene.web.WebView;
 import nl.hsleiden.DAO.VideoDAO;
 import nl.hsleiden.service.VideoService;
 
@@ -19,5 +20,9 @@ public class VideoController {
             videoController = new VideoController(new VideoDAO(), new VideoService());
         }
         return videoController;
+    }
+
+    public void embedVideo(String url, WebView webView) {
+        webView.getEngine().load(url);
     }
 }
