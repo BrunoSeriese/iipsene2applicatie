@@ -18,7 +18,8 @@
         </font>
     </TextArea>
     <Button alignment="TOP_LEFT" layoutX="640.0" layoutY="638.0" mnemonicParsing="false" prefHeight="20.0"
-            prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Volgende" onAction="#onNextButtonClick">
+            prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Volgende"
+            onAction="#onNextButtonClick">
         <font>
             <Font name="System Bold" size="14.0"/>
         </font>
