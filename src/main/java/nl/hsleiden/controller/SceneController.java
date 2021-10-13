@@ -13,12 +13,11 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class SceneController {
+    private static SceneController sceneController;
 
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-    static SceneController sceneController;
 
     public SceneController(){
 

@@ -12,9 +12,8 @@ import javafx.stage.Stage;
 import nl.hsleiden.iipsene2applicatie.MainApplication;
 
 public class MainController {
-
-    SceneController sceneController;
-    static MainController mainController;
+    private static MainController mainController;
+    private final SceneController sceneController;
 
     public MainController(){
         sceneController = SceneController.getInstance();

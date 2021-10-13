@@ -1,7 +1,7 @@
 package nl.hsleiden.controller;
 
 public class AnswerController {
-    static AnswerController answerController;
+    private static AnswerController answerController;
 
     public AnswerController(){
 
