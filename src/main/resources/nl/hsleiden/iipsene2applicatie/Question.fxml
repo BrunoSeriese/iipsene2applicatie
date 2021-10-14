@@ -21,7 +21,7 @@
          </cursor>
         </Button>
 
-        <Button alignment="TOP_LEFT" layoutX="640.0" layoutY="628.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Volgende">
+        <Button alignment="TOP_LEFT" onAction="#nextContent" layoutX="640.0" layoutY="628.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Volgende">
             <font>
                 <Font name="@../font/NeueHaasDisplayBlack.ttf" size="12.0" />
             </font>
