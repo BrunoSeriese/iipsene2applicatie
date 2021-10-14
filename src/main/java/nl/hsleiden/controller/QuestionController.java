@@ -1,9 +1,12 @@
 package nl.hsleiden.controller;
 
+import nl.hsleiden.DAO.NetworkDAO;
 import nl.hsleiden.DAO.QuestionDAO;
 import nl.hsleiden.service.QuestionService;
 
 import nl.hsleiden.service.HistoryService;
+
+import java.io.IOException;
 
 public class QuestionController {
     private static QuestionController questionController;
@@ -11,7 +14,7 @@ public class QuestionController {
     private final QuestionService questionService;
     private final SceneController sceneController;
     private final ContentController contentController;
-
+    private final NetworkDAO networkDAO;
 
     public QuestionController(QuestionDAO questionDAO,
                               QuestionService questionService) {
@@ -19,6 +22,7 @@ public class QuestionController {
         this.questionService = questionService;
         sceneController = SceneController.getInstance();
         contentController = ContentController.getInstance();
+        networkDAO = NetworkDAO.getInstance();
     }
 
     HistoryService historyService = new HistoryService();
@@ -37,9 +41,10 @@ public class QuestionController {
 
     }
 
-    public void sendNextContent() {
+    public void sendNextContent() throws IOException {
 
         System.out.println("this works!");
+        networkDAO.connect();
         contentController.nextContent();
     }
     public void showCurrentQuestion(){

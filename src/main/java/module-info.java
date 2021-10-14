@@ -3,6 +3,8 @@ module nl.hsleiden.iipsene2applicatie {
     requires javafx.fxml;
     requires javafx.graphics;
     requires javafx.web;
+    requires org.apache.commons.io;
+    requires json;
 
 
     opens nl.hsleiden.iipsene2applicatie to javafx.fxml;

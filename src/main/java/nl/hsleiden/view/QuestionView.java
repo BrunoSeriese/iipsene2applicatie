@@ -8,6 +8,8 @@ import nl.hsleiden.controller.QuestionController;
 import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
+import java.io.IOException;
+
 public class QuestionView implements QuestionObserver {
     private final QuestionController questionController;
     public QuestionView() {
@@ -31,7 +33,7 @@ public class QuestionView implements QuestionObserver {
     public void update(QuestionSubject state) {
 
     }
-    public void nextContent() {
+    public void nextContent() throws IOException {
         System.out.println("next content is coming!");
         questionController.sendNextContent();
     }
