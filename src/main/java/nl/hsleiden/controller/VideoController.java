@@ -16,7 +16,7 @@ public class VideoController {
     }
 
     public static VideoController getInstance() {
-        if(videoController == null) {
+        if (videoController == null) {
             videoController = new VideoController(new VideoDAO(), new VideoService());
         }
         return videoController;
