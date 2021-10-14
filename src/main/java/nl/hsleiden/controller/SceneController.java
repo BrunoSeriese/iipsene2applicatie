@@ -17,7 +17,7 @@ public class SceneController {
     private Scene scene;
     private Parent root;
 
-    public SceneController() {
+    private SceneController() {
 
     }
 
@@ -35,7 +35,7 @@ public class SceneController {
      * @author Hicham El Faquir
      */
 
-    public static SceneController getInstance() {
+    public synchronized static SceneController getInstance() {
         if (sceneController == null) {
             sceneController = new SceneController();
         }

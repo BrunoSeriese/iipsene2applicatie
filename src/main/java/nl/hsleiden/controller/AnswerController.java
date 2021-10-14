@@ -8,13 +8,13 @@ public class AnswerController {
     private final AnswerDAO answerDAO;
     private final AnswerService answerService;
 
-    public AnswerController(AnswerDAO answerDAO,
+    private AnswerController(AnswerDAO answerDAO,
                             AnswerService answerService){
         this.answerDAO = answerDAO;
         this.answerService = answerService;
     }
 
-    public static AnswerController getInstance() {
+    public synchronized static AnswerController getInstance() {
         if (answerController == null) {
             answerController = new AnswerController(new AnswerDAO(), new AnswerService());
         }

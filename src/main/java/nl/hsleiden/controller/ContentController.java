@@ -10,13 +10,13 @@ public class ContentController {
     private final HistoryService historyService;
     private final SceneController sceneController;
 
-    public ContentController(HistoryService historyService){
+    private ContentController(HistoryService historyService){
         this.historyService = historyService;
         sceneController = SceneController.getInstance();
     }
 
 
-    public static ContentController getInstance() {
+    public synchronized static ContentController getInstance() {
         if (contentController == null) {
             contentController = new ContentController(new HistoryService());
         }
