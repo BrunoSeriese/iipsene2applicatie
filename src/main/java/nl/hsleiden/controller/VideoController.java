@@ -9,8 +9,7 @@ public class VideoController {
     private final VideoDAO videoDAO;
     private final VideoService videoService;
 
-    public VideoController(VideoDAO videoDAO,
-                           VideoService videoService) {
+    public VideoController(VideoDAO videoDAO, VideoService videoService) {
         this.videoDAO = videoDAO;
         this.videoService = videoService;
     }
