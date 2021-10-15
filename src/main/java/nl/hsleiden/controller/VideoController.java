@@ -9,13 +9,13 @@ public class VideoController {
     private final VideoDAO videoDAO;
     private final VideoService videoService;
 
-    public VideoController(VideoDAO videoDAO, VideoService videoService) {
+    private VideoController(VideoDAO videoDAO, VideoService videoService) {
         this.videoDAO = videoDAO;
         this.videoService = videoService;
     }
 
-    public static VideoController getInstance() {
-        if (videoController == null) {
+    public synchronized static VideoController getInstance() {
+        if(videoController == null) {
             videoController = new VideoController(new VideoDAO(), new VideoService());
         }
         return videoController;

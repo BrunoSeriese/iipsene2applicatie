@@ -13,7 +13,7 @@ public class ExplanationController {
     private final SceneController sceneController;
     private final ContentController contentController;
 
-    public ExplanationController(ExplanationDAO explanationDAO,
+    private ExplanationController(ExplanationDAO explanationDAO,
                                  ExplanationService explanationService) {
         this.explanationDAO = explanationDAO;
         this.explanationService = explanationService;
@@ -21,7 +21,7 @@ public class ExplanationController {
         contentController = ContentController.getInstance();
     }
 
-    public static ExplanationController getInstance() {
+    public synchronized static ExplanationController getInstance() {
         if (explanationController == null) {
             explanationController = new ExplanationController(new ExplanationDAO(), new ExplanationService());
         }

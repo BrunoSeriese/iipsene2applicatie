@@ -17,14 +17,14 @@ public class ResultController {
     private final ResultService resultService;
     private final SceneController sceneController;
 
-    public ResultController(ResultDAO resultDAO, ResultService resultService) {
+    private ResultController(ResultDAO resultDAO, ResultService resultService) {
         this.resultDAO = resultDAO;
         this.resultService = resultService;
 
         sceneController = SceneController.getInstance();
     }
 
-    public static ResultController getInstance() {
+    public synchronized static ResultController getInstance() {
         if(resultController == null) {
             resultController = new ResultController(new ResultDAO(), new ResultService());
         }

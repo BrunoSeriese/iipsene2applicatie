@@ -15,8 +15,9 @@ public class QuestionController {
     private final SceneController sceneController;
     private final ContentController contentController;
     private final NetworkDAO networkDAO;
+    private final HistoryService historyService = new HistoryService();
 
-    public QuestionController(QuestionDAO questionDAO,
+    private QuestionController(QuestionDAO questionDAO,
                               QuestionService questionService) {
         this.questionDAO = questionDAO;
         this.questionService = questionService;
@@ -25,9 +26,7 @@ public class QuestionController {
         networkDAO = NetworkDAO.getInstance();
     }
 
-    HistoryService historyService = new HistoryService();
-
-    public static QuestionController getInstance() {
+    public synchronized static QuestionController getInstance() {
         if(questionController == null) {
             questionController = new QuestionController(new QuestionDAO(), new QuestionService());
         }

@@ -8,11 +8,11 @@ public class MainController {
     private static MainController mainController;
     private final SceneController sceneController;
 
-    public MainController() {
+    private MainController() {
         sceneController = SceneController.getInstance();
     }
 
-    public static MainController getInstance() {
+    public synchronized static MainController getInstance() {
         if (mainController == null) {
             mainController = new MainController();
         }
