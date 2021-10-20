@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.*;
-import java.nio.charset.Charset;
+
 import java.nio.charset.StandardCharsets;
 
 public class NetworkDAO {

@@ -30,12 +30,16 @@ public class ContentController {
 
         if (content instanceof Question) {
             System.out.println("vraag");
+//            sceneController.switchToNextScreen();
         } else if (content instanceof Video) {
             System.out.println("video");
+//            sceneController.switchToNextScreen();
         } else if (content instanceof Result){
             System.out.println("resultaten");
+//            sceneController.switchToNextScreen();
         } else if (content instanceof Explanation){
             System.out.println("uitleg");
+//            sceneController.switchToNextScreen();
         }
 
     }
