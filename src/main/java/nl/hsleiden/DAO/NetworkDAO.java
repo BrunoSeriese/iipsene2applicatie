@@ -9,7 +9,12 @@ import java.net.*;
 
 import java.nio.charset.StandardCharsets;
 
+
+
 public class NetworkDAO {
+
+    private  JSONObject retrieved;
+
     private static NetworkDAO networkDAO;
     public NetworkDAO(){
 
@@ -23,6 +28,7 @@ public class NetworkDAO {
     }
     public void requestDatabase() throws IOException {
         JSONObject json = new JSONObject(IOUtils.toString(new URL("https://jsonplaceholder.typicode.com/todos/1"), StandardCharsets.UTF_8));
+        this.retrieved = json;
         System.out.println(json);
     }
 
