@@ -21,7 +21,7 @@ public class NetworkDAO {
         }
         return networkDAO;
     }
-    public void connect() throws IOException {
+    public void requestDatabase() throws IOException {
         JSONObject json = new JSONObject(IOUtils.toString(new URL("https://jsonplaceholder.typicode.com/todos/1"), StandardCharsets.UTF_8));
         System.out.println(json);
     }
