@@ -1,8 +1,10 @@
 package nl.hsleiden.controller;
 
+import nl.hsleiden.DAO.QuestionDAO;
 import nl.hsleiden.model.*;
 import nl.hsleiden.service.HistoryService;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -10,11 +12,13 @@ public class ContentController {
     private static ContentController contentController;
     private final HistoryService historyService;
     private final SceneController sceneController;
+    private final QuestionDAO questionDAO;
     private final ArrayList ourDatabase = new ArrayList<>();
 
     private ContentController(HistoryService historyService){
         this.historyService = historyService;
         sceneController = SceneController.getInstance();
+        questionDAO = QuestionDAO.getInstance();
     }
 
 
@@ -25,11 +29,8 @@ public class ContentController {
         return contentController;
     }
 
-    public void buildDatabase(){
-
-
-
-
+    public void buildDatabase() throws IOException {
+        questionDAO.getQuestions();
     }
 
 

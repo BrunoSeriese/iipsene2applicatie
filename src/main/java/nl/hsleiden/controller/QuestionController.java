@@ -43,7 +43,7 @@ public class QuestionController {
     public void sendNextContent() throws IOException {
 
         System.out.println("this works!");
-        networkDAO.requestDatabase();
+        contentController.buildDatabase();
         contentController.nextContent();
     }
     public void showCurrentQuestion(){
