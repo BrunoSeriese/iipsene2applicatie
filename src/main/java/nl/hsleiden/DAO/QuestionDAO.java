@@ -1,16 +1,15 @@
 package nl.hsleiden.DAO;
 
 import com.google.gson.Gson;
-import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.model.Question;
-import nl.hsleiden.service.HistoryService;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
-
+import org.json.JSONObject;
 import java.io.IOException;
-import java.net.MalformedURLException;
+import java.lang.reflect.Type;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.List;
 
 public class QuestionDAO implements DAO<Question> {
@@ -51,7 +50,18 @@ public class QuestionDAO implements DAO<Question> {
     }
     public void getQuestions() throws IOException {
         JSONArray json = new JSONArray(IOUtils.toString(new URL("http://localhost:8080/questions"), StandardCharsets.UTF_8));
+
+//        Question question = new Gson().fromJson(String.valueOf(json), Question.class);
+//        System.out.println(question);
+
+//        for (Object o : json) {
+//            System.out.println(o);
+//            System.out.println("BREAK\n\n\n");
+//
+//
+//        }
+
 //       Question[] questions = new Gson().fromJson(json.toString(), Question[].class);
-//        System.out.println(questions);
+//        System.out.println(Arrays.toString(questions));
     }
 }

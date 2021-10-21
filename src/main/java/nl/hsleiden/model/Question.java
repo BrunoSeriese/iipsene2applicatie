@@ -4,9 +4,10 @@ import nl.hsleiden.observer.Observer;
 import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Question implements Content, QuestionSubject {
+public class Question implements Content, QuestionSubject, Serializable {
     private final ArrayList<Observer<QuestionSubject>> observers = new ArrayList<>();
 
     private int id;
@@ -16,6 +17,12 @@ public class Question implements Content, QuestionSubject {
     public Question(int id, String value) {
 
     }
+
+    public Question(int id, String value, Answer[] answers) {
+
+    }
+
+
 
     @Override
     public int getId() {
@@ -31,6 +38,7 @@ public class Question implements Content, QuestionSubject {
     public Answer getAnswer() {
         return null;
     }
+
 
     @Override
     public void registerObserver(Observer<QuestionSubject> observer) {
