@@ -15,6 +15,7 @@ public class ContentController {
     private final QuestionDAO questionDAO;
     private final ArrayList ourDatabase = new ArrayList<>();
 
+
     private ContentController(HistoryService historyService){
         this.historyService = historyService;
         sceneController = SceneController.getInstance();
