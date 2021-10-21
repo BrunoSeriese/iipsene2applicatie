@@ -3,12 +3,14 @@ package nl.hsleiden.controller;
 import nl.hsleiden.model.*;
 import nl.hsleiden.service.HistoryService;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class ContentController {
     private static ContentController contentController;
     private final HistoryService historyService;
     private final SceneController sceneController;
+    private final ArrayList ourDatabase = new ArrayList<>();
 
     private ContentController(HistoryService historyService){
         this.historyService = historyService;
@@ -23,6 +25,14 @@ public class ContentController {
         return contentController;
     }
 
+    public void buildDatabase(){
+
+
+
+
+    }
+
+
     public void nextContent() {
         historyService.add(new Explanation(1,"checkme"), new Answer(1,"world", 1,1));
         Map<Content, Answer> historyContent = historyService.getLast();
@@ -30,12 +40,16 @@ public class ContentController {
 
         if (content instanceof Question) {
             System.out.println("vraag");
+//            sceneController.switchToNextScreen();
         } else if (content instanceof Video) {
             System.out.println("video");
+//            sceneController.switchToNextScreen();
         } else if (content instanceof Result){
             System.out.println("resultaten");
+//            sceneController.switchToNextScreen();
         } else if (content instanceof Explanation){
             System.out.println("uitleg");
+//            sceneController.switchToNextScreen();
         }
 
     }
