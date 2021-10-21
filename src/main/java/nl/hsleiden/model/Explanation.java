@@ -12,8 +12,10 @@ public class Explanation implements Content, ExplanationSubject {
     private String value;
     private Answer answer;
 
-    public Explanation(int id, String value) {
-
+    public Explanation(int id, String value, Answer answer) {
+        this.id = id;
+        this.value = value;
+        this.answer = answer;
     }
 
     @Override
@@ -45,4 +47,5 @@ public class Explanation implements Content, ExplanationSubject {
     public void notifyObservers() {
         observers.forEach(observer -> observer.update(this));
     }
+
 }
