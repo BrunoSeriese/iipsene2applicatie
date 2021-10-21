@@ -2,6 +2,7 @@ package nl.hsleiden.DAO;
 import nl.hsleiden.controller.QuestionController;
 import nl.hsleiden.service.QuestionService;
 import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -13,7 +14,7 @@ import java.nio.charset.StandardCharsets;
 
 public class NetworkDAO {
 
-    private  JSONObject retrieved;
+    private JSONArray retrieved;
 
     private static NetworkDAO networkDAO;
     public NetworkDAO(){
@@ -27,7 +28,7 @@ public class NetworkDAO {
         return networkDAO;
     }
     public void requestDatabase() throws IOException {
-        JSONObject json = new JSONObject(IOUtils.toString(new URL("https://jsonplaceholder.typicode.com/todos/1"), StandardCharsets.UTF_8));
+        JSONArray json = new JSONArray(IOUtils.toString(new URL("http://localhost:8080/questions"), StandardCharsets.UTF_8));
         this.retrieved = json;
         System.out.println(json);
     }
