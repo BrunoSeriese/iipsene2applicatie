@@ -50,7 +50,6 @@ public class QuestionDAO implements DAO<Question> {
     }
     public void getQuestions() throws IOException {
         JSONArray json = new JSONArray(IOUtils.toString(new URL("http://localhost:8080/questions"), StandardCharsets.UTF_8));
-
 //        Question question = new Gson().fromJson(String.valueOf(json), Question.class);
 //        System.out.println(question);
 
