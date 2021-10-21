@@ -4,6 +4,7 @@ import nl.hsleiden.observer.Observer;
 import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Question implements Content, QuestionSubject {
@@ -11,9 +12,9 @@ public class Question implements Content, QuestionSubject {
 
     private int id;
     private String value;
-    private Answer[] answers;
+    private ArrayList<Answer> answers;
 
-    public Question(int id, String value) {
+    public Question(int id, String value, ArrayList<Answer> answers ) {
 
     }
 
