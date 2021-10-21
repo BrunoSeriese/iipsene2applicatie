@@ -13,8 +13,10 @@ public class Result implements Content, ResultSubject {
     private String value;
     private Answer answer;
 
-    public Result(int id, String value) {
+    public Result(int id, String value, Answer answer) {
+        this.id = id;
         this.value = value;
+        this.answer = answer;
     }
 
     @Override
