@@ -39,7 +39,7 @@ public class ContentController {
 
 
     public void nextContent() {
-        historyService.add(new Explanation(1,"checkme"), new Answer(1,"world", 1,1));
+        historyService.add(new Explanation(1,"checkme",new Answer(1,"world", 1,1)), new Answer(1,"world", 1,1));
         Map<Content, Answer> historyContent = historyService.getLast();
         Content content = (Content) historyContent.keySet().toArray()[0];
 
