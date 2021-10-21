@@ -7,6 +7,7 @@ import nl.hsleiden.model.Question;
 import nl.hsleiden.service.HistoryService;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -61,8 +62,10 @@ public class QuestionDAO implements DAO<Question> {
 
                 //Adding each element of JSON array into ArrayList
                 listdata.add(json.get(i));
+                JSONObject newObj = (JSONObject) json.get(i);
+                System.out.println(newObj.get("value"));
             }
 
-        System.out.println(listdata);
+
     }
 }
