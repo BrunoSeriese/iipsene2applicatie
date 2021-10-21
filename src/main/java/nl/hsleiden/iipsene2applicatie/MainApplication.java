@@ -6,10 +6,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
+import nl.hsleiden.controller.ContentController;
 
 import java.io.IOException;
 
 public class MainApplication extends Application {
+
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -21,6 +23,7 @@ public class MainApplication extends Application {
             alert.setHeaderText("Close program?");
             alert.showAndWait().filter(r -> r != ButtonType.OK).ifPresent(r->evt.consume());
         });
+        ContentController.getInstance().buildDatabase();
         stage.setTitle("Subsidiewijzer SVDJ");
         stage.setResizable(false);
         stage.setFullScreen(false);

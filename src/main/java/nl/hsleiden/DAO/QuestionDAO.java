@@ -3,6 +3,7 @@ package nl.hsleiden.DAO;
 
 
 import nl.hsleiden.controller.ContentController;
+import nl.hsleiden.controller.SceneController;
 import nl.hsleiden.model.Answer;
 import nl.hsleiden.model.Question;
 import nl.hsleiden.service.HistoryService;
@@ -19,15 +20,14 @@ import java.util.List;
 
 public class QuestionDAO implements DAO<Question> {
     private static QuestionDAO questionDAO;
+    private final ContentController contentController;
 
+    public QuestionDAO(){
+    contentController = ContentController.getInstance();
 
-
-    public synchronized static QuestionDAO getInstance(){
-        if (questionDAO == null) {
-            questionDAO = new QuestionDAO();
-        }
-        return questionDAO;
     }
+
+
 
     @Override
     public List<Question> getAll() {
@@ -82,7 +82,7 @@ public class QuestionDAO implements DAO<Question> {
                     questionAnswers.add(new Answer(aid,avalue,acurrentContentId,anextContentId));
                 }
                 questions.add(new Question(questionID,value,questionAnswers));
-
+                contentController.add(new Question(questionID,value,questionAnswers));
 
             }
 

@@ -12,14 +12,13 @@ public class ContentController {
     private static ContentController contentController;
     private final HistoryService historyService;
     private final SceneController sceneController;
-    private final QuestionDAO questionDAO;
     private final ArrayList ourDatabase = new ArrayList<>();
 
 
     private ContentController(HistoryService historyService){
         this.historyService = historyService;
         sceneController = SceneController.getInstance();
-        questionDAO = QuestionDAO.getInstance();
+
     }
 
 
@@ -31,7 +30,11 @@ public class ContentController {
     }
 
     public void buildDatabase() throws IOException {
-        questionDAO.getQuestions();
+        QuestionController.getInstance().getQuestions();
+    }
+
+    public void add(Content content){
+        ourDatabase.add(content);
     }
 
 
