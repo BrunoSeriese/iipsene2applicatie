@@ -34,6 +34,8 @@ public class QuestionController {
     public void getPreviousContent() {
         //TODO spreek met de historyService en haal de vorige content op
 
+
+        contentController.previousContentId();
     }
 
     public void sendNextContent() {
@@ -41,6 +43,7 @@ public class QuestionController {
         contentController.nextContent();
         contentController.nextContentId();
     }
+
 
     public String unpackQuestions() {
         return contentController.unpackQuestions();

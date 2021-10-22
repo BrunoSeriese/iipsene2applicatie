@@ -51,12 +51,16 @@ public class ContentController {
     }
 
 
-    public void unpackIds() {
+    public int unpackIds() {
+        int tmpId = 0;
+
         for (Content content : ourDatabase) {
             if (content.getId() == currentContentId) {
-                content.getId();
+                tmpId = content.getId();
             }
         }
+        System.out.println("AAAA  " + tmpId);
+        return tmpId;
     }
 
     public String unpackQuestions() {
@@ -126,11 +130,16 @@ public class ContentController {
     }
 
     public void nextContentId() {
-        this.currentContentId++;
+       //TODO unpackAnswers moet eigenlijk het aantal vragen zijn dus unpackQuestions, maar daar zitten nu resultaten is dus heb het zo moeten doen.
+       if (this.currentContentId <= unpackAnswers().size()){
+           this.currentContentId++;
+       }
     }
 
     public void previousContentId() {
-        this.currentContentId--;
+        if (this.currentContentId > 1) {
+            this.currentContentId--;
+        }
     }
 
 
