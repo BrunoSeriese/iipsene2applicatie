@@ -1,13 +1,11 @@
 package nl.hsleiden.controller;
 
-import javafx.scene.control.TextArea;
 import nl.hsleiden.DAO.NetworkDAO;
 import nl.hsleiden.DAO.QuestionDAO;
 import nl.hsleiden.service.HistoryService;
 import nl.hsleiden.service.QuestionService;
-import org.w3c.dom.Text;
 
-import java.io.IOException;
+import java.util.ArrayList;
 
 public class QuestionController {
     private static QuestionController questionController;
@@ -38,22 +36,28 @@ public class QuestionController {
 
     }
 
-    public void sendNextContent(TextArea[] list) {
+    public void sendNextContent() {
+
         System.out.println("this works!");
         contentController.nextContent();
-        contentController.unpackAnswer(list);
         contentController.nextContentId();
+
+
+
     }
 
+    public String unpackQuestions() {
+        return contentController.unpackQuestions();
+    }
 
-
+    public ArrayList<String> unpackAnswers() {
+        return contentController.unpackAnswers();
+    }
 
 
     public void getQuestions() {
         questionDAO.getQuestions();
     }
-
-
 
 
 }
