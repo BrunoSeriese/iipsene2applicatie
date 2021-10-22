@@ -8,8 +8,8 @@ import nl.hsleiden.controller.QuestionController;
 import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
-import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class QuestionView implements QuestionObserver, Initializable {
@@ -34,9 +34,7 @@ public class QuestionView implements QuestionObserver, Initializable {
     private TextArea answer1, answer2, answer3, answer4;
     @FXML
     private TextArea questionContainer;
-    public TextArea[] answerList;
-
-
+    public ArrayList<TextArea> answerList = new ArrayList<>();
 
 
     @FXML
@@ -54,15 +52,23 @@ public class QuestionView implements QuestionObserver, Initializable {
         questionController.sendNextContent();
         questionContainer.setText(questionController.unpackQuestions());
 
-
+        for (int i = 0; i < 4; i++) {
+            answerList.get(i).setText(questionController.unpackAnswers().get(i));
+        }
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        answerList = new TextArea[]{
-                answer1, answer2, answer3, answer4
-        };
+        answerList.add(answer1);
+        answerList.add(answer2);
+        answerList.add(answer3);
+        answerList.add(answer4);
 
         questionContainer.setText(questionController.unpackQuestions());
+
+        for (int i = 0; i < answerList.size(); i++) {
+            answerList.get(i).setText(questionController.unpackAnswers().get(i));
+        }
     }
 }

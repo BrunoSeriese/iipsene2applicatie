@@ -5,6 +5,8 @@ import nl.hsleiden.DAO.QuestionDAO;
 import nl.hsleiden.service.HistoryService;
 import nl.hsleiden.service.QuestionService;
 
+import java.util.ArrayList;
+
 public class QuestionController {
     private static QuestionController questionController;
     private final QuestionDAO questionDAO;
@@ -39,23 +41,23 @@ public class QuestionController {
         System.out.println("this works!");
         contentController.nextContent();
         contentController.nextContentId();
-        contentController.unpackContent();
+
 
 
     }
 
-    public String unpackQuestions(){
+    public String unpackQuestions() {
         return contentController.unpackQuestions();
     }
 
-
+    public ArrayList<String> unpackAnswers() {
+        return contentController.unpackAnswers();
+    }
 
 
     public void getQuestions() {
         questionDAO.getQuestions();
     }
-
-
 
 
 }

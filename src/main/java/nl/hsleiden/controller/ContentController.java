@@ -44,35 +44,46 @@ public class ContentController {
 
                 for (Answer answer : content.getAnswer()) {
                     System.out.println(answer.getValue());
+
                 }
             }
         }
     }
 
+
     public void unpackIds() {
         for (Content content : ourDatabase) {
             if (content.getId() == currentContentId) {
-                System.out.println(content.getId());
+                content.getId();
             }
         }
     }
 
     public String unpackQuestions() {
-        String tmp = null;
+        String tmpQuestion = null;
 
         for (Content content : ourDatabase) {
             if (content.getId() == currentContentId) {
-               tmp = content.getValue();
+                tmpQuestion = content.getValue();
             }
         }
-        return tmp;
+        return tmpQuestion;
     }
-    public void unpackAnswers() {
+
+    public ArrayList<String> unpackAnswers() {
+        String tmpAnswers;
+        ArrayList<String> list = new ArrayList<>();
+
         for (Content content : ourDatabase) {
-            for (Answer answer : content.getAnswer()) {
-                System.out.println(answer.getValue());
+            if (content.getId() == currentContentId) {
+                for (Answer answer : content.getAnswer()) {
+                    tmpAnswers = answer.getValue();
+                    list.add(tmpAnswers);
+                }
             }
         }
+
+        return list;
     }
 
 
@@ -115,9 +126,7 @@ public class ContentController {
     }
 
     public void nextContentId() {
-        System.out.println("before" + currentContentId);
         this.currentContentId++;
-        System.out.println("after" + currentContentId);
     }
 
     public void previousContentId() {

@@ -14,7 +14,7 @@ public class ExplanationController {
     private final ContentController contentController;
 
     private ExplanationController(ExplanationDAO explanationDAO,
-                                 ExplanationService explanationService) {
+                                  ExplanationService explanationService) {
         this.explanationDAO = explanationDAO;
         this.explanationService = explanationService;
         sceneController = SceneController.getInstance();
@@ -28,11 +28,10 @@ public class ExplanationController {
         return explanationController;
     }
 
-//    public void sendNextContent() {
-////        contentController.nextContent();
-//        contentController.unpackContent();
-////        contentController.nextContentId();
-//    }
+    public void sendNextContent() {
+        contentController.nextContent();
+
+    }
 
     public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
         sceneController.switchToNextScreen(event, fileName);
