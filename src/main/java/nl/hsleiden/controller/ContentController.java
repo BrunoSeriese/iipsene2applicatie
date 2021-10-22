@@ -31,6 +31,7 @@ public class ContentController {
 
     public void buildDatabase() throws IOException {
         QuestionController.getInstance().getQuestions();
+        ResultController.getInstance().getResults();
     }
 
     public void add(Content content){
