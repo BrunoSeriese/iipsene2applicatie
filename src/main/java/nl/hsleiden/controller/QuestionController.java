@@ -37,19 +37,16 @@ public class QuestionController {
         //TODO spreek met de historyService en haal de vorige content op
 
 
-
     }
 
     public void sendNextContent() throws IOException {
 
         System.out.println("this works!");
-        contentController.buildDatabase();
         contentController.nextContent();
     }
-    public void showCurrentQuestion(){
 
+    public void getQuestions() throws IOException {
+        questionDAO.getQuestions();
     }
-    public void showCurrentAnswer(){
 
-    }
 }

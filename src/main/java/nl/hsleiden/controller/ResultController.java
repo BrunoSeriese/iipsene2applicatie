@@ -47,4 +47,8 @@ public class ResultController {
         }
 
     }
+
+    public void getResults() throws IOException {
+        resultDAO.getResults();
+    }
 }

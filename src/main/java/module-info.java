@@ -5,7 +5,7 @@ module nl.hsleiden.iipsene2applicatie {
     requires javafx.web;
     requires org.apache.commons.io;
     requires json;
-    requires com.google.gson;
+
 
 
     opens nl.hsleiden.iipsene2applicatie to javafx.fxml;

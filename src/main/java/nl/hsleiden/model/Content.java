@@ -1,7 +1,10 @@
 package nl.hsleiden.model;
 
-public interface Content {
+import java.util.ArrayList;
+
+public interface Content<T> {
     int getId();
     String getValue();
-    Answer getAnswer();
+    ArrayList<Answer> getAnswer();
+
 }

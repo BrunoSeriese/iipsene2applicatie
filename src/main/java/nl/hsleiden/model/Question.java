@@ -1,7 +1,6 @@
 package nl.hsleiden.model;
 
 import nl.hsleiden.observer.Observer;
-import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
 import java.io.Serializable;
@@ -12,10 +11,12 @@ public class Question implements Content, QuestionSubject, Serializable {
 
     private int id;
     private String value;
-    private Answer[] answers;
+    private ArrayList<Answer> answers;
 
-    public Question(int id, String value) {
-
+    public Question(int id, String value, ArrayList<Answer> answers ) {
+        this.id = id;
+        this.value = value;
+        this.answers = answers;
     }
 
     public Question(int id, String value, Answer[] answers) {
@@ -26,17 +27,17 @@ public class Question implements Content, QuestionSubject, Serializable {
 
     @Override
     public int getId() {
-        return 0;
+        return this.id;
     }
 
     @Override
     public String getValue() {
-        return null;
+        return this.value;
     }
 
     @Override
-    public Answer getAnswer() {
-        return null;
+    public ArrayList<Answer> getAnswer() {
+        return this.answers;
     }
 
 

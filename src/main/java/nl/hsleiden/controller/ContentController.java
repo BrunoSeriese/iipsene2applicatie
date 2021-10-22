@@ -12,13 +12,14 @@ public class ContentController {
     private static ContentController contentController;
     private final HistoryService historyService;
     private final SceneController sceneController;
-    private final QuestionDAO questionDAO;
     private final ArrayList ourDatabase = new ArrayList<>();
+    private int contentId = 1;
+
 
     private ContentController(HistoryService historyService){
         this.historyService = historyService;
         sceneController = SceneController.getInstance();
-        questionDAO = QuestionDAO.getInstance();
+
     }
 
 
@@ -30,12 +31,24 @@ public class ContentController {
     }
 
     public void buildDatabase() throws IOException {
-        questionDAO.getQuestions();
+        QuestionController.getInstance().getQuestions();
+        ResultController.getInstance().getResults();
+
+        for(int i =0; i<ourDatabase.size();i++){
+            Content content = (Content) ourDatabase.get(i);
+            System.out.println(content.getId());
+            System.out.println(content.getValue());
+            System.out.println(content.getAnswer());
+        }
+    }
+
+    public void add(Content content){
+        ourDatabase.add(content);
     }
 
 
     public void nextContent() {
-        historyService.add(new Explanation(1,"checkme"), new Answer(1,"world", 1,1));
+        historyService.add(new Explanation(1,"checkme",new Answer(1,"world", 1,1)), new Answer(1,"world", 1,1));
         Map<Content, Answer> historyContent = historyService.getLast();
         Content content = (Content) historyContent.keySet().toArray()[0];
 
@@ -53,6 +66,12 @@ public class ContentController {
 //            sceneController.switchToNextScreen();
         }
 
+    }
+    public void nextContentId(){
+        this.contentId += 1;
+    }
+    public  void previousContentId(){
+        this.contentId -= 1;
     }
 
 
