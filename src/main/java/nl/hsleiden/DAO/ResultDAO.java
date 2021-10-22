@@ -1,5 +1,6 @@
 package nl.hsleiden.DAO;
 
+import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.model.Answer;
 import nl.hsleiden.model.Result;
 import org.apache.commons.io.IOUtils;
@@ -14,6 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResultDAO implements DAO<Result> {
+    private final ContentController contentController;
+
+    public ResultDAO(){
+        contentController = ContentController.getInstance();
+    }
+
     @Override
     public List<Result> getAll() {
         return null;
@@ -55,6 +62,7 @@ public class ResultDAO implements DAO<Result> {
             Answer newAnswer = new Answer(aid, avalue, acurrentContentId, anextContentId);
 
             Result newResult = new Result(rid, rvalue, newAnswer);
+            contentController.add(newResult);
 
         }
 
