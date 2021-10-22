@@ -58,7 +58,7 @@ public class QuestionDAO implements DAO<Question> {
         JSONArray json = new JSONArray(IOUtils.toString(new URL("http://localhost:8080/questions"), StandardCharsets.UTF_8));
         ArrayList<Question> questions = new ArrayList<>();
 
-            //Iterating JSON array
+            //Iterating JSON arrayl
             for (int i=0;i<json.length();i++){
 
                 //Adding each element of JSON array into ArrayList
