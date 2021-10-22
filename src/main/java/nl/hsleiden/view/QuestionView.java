@@ -38,6 +38,7 @@ public class QuestionView implements QuestionObserver, Initializable {
 
 
 
+
     @FXML
     public void onbtnclick() {
         System.out.println("HET WERKT");
@@ -51,6 +52,8 @@ public class QuestionView implements QuestionObserver, Initializable {
     public void nextContent() {
         System.out.println("next content is coming!");
         questionController.sendNextContent();
+        questionContainer.setText(questionController.unpackQuestions());
+
 
     }
 
@@ -59,5 +62,7 @@ public class QuestionView implements QuestionObserver, Initializable {
         answerList = new TextArea[]{
                 answer1, answer2, answer3, answer4
         };
+
+        questionContainer.setText(questionController.unpackQuestions());
     }
 }

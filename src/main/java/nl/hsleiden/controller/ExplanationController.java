@@ -28,11 +28,11 @@ public class ExplanationController {
         return explanationController;
     }
 
-    public void sendNextContent() {
-        contentController.nextContent();
-        contentController.unpackContent();
-        contentController.nextContentId();
-    }
+//    public void sendNextContent() {
+////        contentController.nextContent();
+//        contentController.unpackContent();
+////        contentController.nextContentId();
+//    }
 
     public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
         sceneController.switchToNextScreen(event, fileName);

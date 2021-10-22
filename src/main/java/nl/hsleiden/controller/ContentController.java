@@ -35,7 +35,6 @@ public class ContentController {
     }
 
 
-
     public void unpackContent() {
 
         for (Content content : ourDatabase) {
@@ -50,9 +49,31 @@ public class ContentController {
         }
     }
 
+    public void unpackIds() {
+        for (Content content : ourDatabase) {
+            if (content.getId() == currentContentId) {
+                System.out.println(content.getId());
+            }
+        }
+    }
 
+    public String unpackQuestions() {
+        String tmp = null;
 
-
+        for (Content content : ourDatabase) {
+            if (content.getId() == currentContentId) {
+               tmp = content.getValue();
+            }
+        }
+        return tmp;
+    }
+    public void unpackAnswers() {
+        for (Content content : ourDatabase) {
+            for (Answer answer : content.getAnswer()) {
+                System.out.println(answer.getValue());
+            }
+        }
+    }
 
 
     public void addContent(Content content) {
@@ -94,7 +115,9 @@ public class ContentController {
     }
 
     public void nextContentId() {
+        System.out.println("before" + currentContentId);
         this.currentContentId++;
+        System.out.println("after" + currentContentId);
     }
 
     public void previousContentId() {

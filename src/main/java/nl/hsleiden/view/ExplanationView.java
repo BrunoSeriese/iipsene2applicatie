@@ -31,6 +31,5 @@ public class ExplanationView implements ExplanationObserver {
     @FXML
     protected void onNextButtonClick(ActionEvent event) throws IOException {
         explanationController.switchToNextScreen(event,"Question.fxml");
-        explanationController.sendNextContent();
     }
 }

@@ -5,8 +5,6 @@ import nl.hsleiden.DAO.QuestionDAO;
 import nl.hsleiden.service.HistoryService;
 import nl.hsleiden.service.QuestionService;
 
-import java.io.IOException;
-
 public class QuestionController {
     private static QuestionController questionController;
     private final QuestionDAO questionDAO;
@@ -37,11 +35,21 @@ public class QuestionController {
     }
 
     public void sendNextContent() {
+
         System.out.println("this works!");
         contentController.nextContent();
-        contentController.unpackContent();
         contentController.nextContentId();
+        contentController.unpackContent();
+
+
     }
+
+    public String unpackQuestions(){
+        return contentController.unpackQuestions();
+    }
+
+
+
 
     public void getQuestions() {
         questionDAO.getQuestions();
