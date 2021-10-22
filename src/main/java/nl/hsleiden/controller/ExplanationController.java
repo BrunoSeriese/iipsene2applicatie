@@ -30,6 +30,8 @@ public class ExplanationController {
 
     public void sendNextContent() {
         contentController.nextContent();
+        contentController.unpackContent();
+        contentController.nextContentId();
     }
 
     public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {

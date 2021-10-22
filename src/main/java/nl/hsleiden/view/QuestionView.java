@@ -1,20 +1,26 @@
 package nl.hsleiden.view;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
-import nl.hsleiden.controller.ExplanationController;
+import javafx.scene.control.TextArea;
 import nl.hsleiden.controller.QuestionController;
 import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class QuestionView implements QuestionObserver {
+public class QuestionView implements QuestionObserver, Initializable {
+
     private final QuestionController questionController;
+
+
     public QuestionView() {
         questionController = QuestionController.getInstance();
     }
+
     @FXML
     RadioButton Button1;
     @FXML
@@ -25,7 +31,15 @@ public class QuestionView implements QuestionObserver {
     RadioButton Button4;
 
     @FXML
-    public void onbtnclick(){
+    private TextArea answer1, answer2, answer3, answer4;
+    @FXML
+    private TextArea questionContainer;
+    public TextArea[] answerList;
+
+
+
+    @FXML
+    public void onbtnclick() {
         System.out.println("HET WERKT");
     }
 
@@ -33,8 +47,17 @@ public class QuestionView implements QuestionObserver {
     public void update(QuestionSubject state) {
 
     }
-    public void nextContent() throws IOException {
+
+    public void nextContent() {
         System.out.println("next content is coming!");
         questionController.sendNextContent();
+
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        answerList = new TextArea[]{
+                answer1, answer2, answer3, answer4
+        };
     }
 }
