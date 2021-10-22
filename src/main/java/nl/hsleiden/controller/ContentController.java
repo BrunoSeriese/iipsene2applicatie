@@ -1,6 +1,5 @@
 package nl.hsleiden.controller;
 
-import nl.hsleiden.DAO.QuestionDAO;
 import nl.hsleiden.model.*;
 import nl.hsleiden.service.HistoryService;
 
@@ -34,11 +33,11 @@ public class ContentController {
         QuestionController.getInstance().getQuestions();
         ResultController.getInstance().getResults();
 
-        for(int i =0; i<ourDatabase.size();i++){
-            Content content = (Content) ourDatabase.get(i);
+        for (Object o : ourDatabase) {
+            Content content = (Content) o;
             System.out.println(content.getId());
             System.out.println(content.getValue());
-            System.out.println(content.getAnswer());
+            System.out.println(content.getAnswer().toString());
         }
     }
 
