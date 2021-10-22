@@ -82,6 +82,8 @@ public class QuestionDAO implements DAO<Question> {
                     questionAnswers.add(new Answer(aid,avalue,acurrentContentId,anextContentId));
                 }
                 questions.add(new Question(questionID,value,questionAnswers));
+                Question newQuestion = new Question(questionID,value,questionAnswers);
+                System.out.println(newQuestion.getId());
                 contentController.add(new Question(questionID,value,questionAnswers));
 
             }

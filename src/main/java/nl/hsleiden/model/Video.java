@@ -1,7 +1,6 @@
 package nl.hsleiden.model;
 
 import nl.hsleiden.observer.Observer;
-import nl.hsleiden.observer.VideoObserver;
 import nl.hsleiden.subject.VideoSubject;
 
 import java.util.ArrayList;
@@ -30,7 +29,7 @@ public class Video implements Content, VideoSubject {
     }
 
     @Override
-    public Answer getAnswer() {
+    public ArrayList<Answer> getAnswer() {
         return null;
     }
 

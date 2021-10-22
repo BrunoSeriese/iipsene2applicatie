@@ -13,6 +13,7 @@ public class ContentController {
     private final HistoryService historyService;
     private final SceneController sceneController;
     private final ArrayList ourDatabase = new ArrayList<>();
+    private int contentId = 1;
 
 
     private ContentController(HistoryService historyService){
@@ -32,6 +33,13 @@ public class ContentController {
     public void buildDatabase() throws IOException {
         QuestionController.getInstance().getQuestions();
         ResultController.getInstance().getResults();
+
+        for(int i =0; i<ourDatabase.size();i++){
+            Content content = (Content) ourDatabase.get(i);
+            System.out.println(content.getId());
+            System.out.println(content.getValue());
+            System.out.println(content.getAnswer());
+        }
     }
 
     public void add(Content content){
@@ -58,6 +66,12 @@ public class ContentController {
 //            sceneController.switchToNextScreen();
         }
 
+    }
+    public void nextContentId(){
+        this.contentId += 1;
+    }
+    public  void previousContentId(){
+        this.contentId -= 1;
     }
 
 

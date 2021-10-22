@@ -1,7 +1,6 @@
 package nl.hsleiden.model;
 
 import nl.hsleiden.observer.Observer;
-import nl.hsleiden.observer.ResultObserver;
 import nl.hsleiden.subject.ResultSubject;
 
 import java.util.ArrayList;
@@ -21,17 +20,19 @@ public class Result implements Content, ResultSubject {
 
     @Override
     public int getId() {
-        return 0;
+        return this.id;
     }
 
     @Override
     public String getValue() {
-        return value;
+        return this.value;
     }
 
     @Override
-    public Answer getAnswer() {
-        return null;
+    public ArrayList getAnswer() {
+        ArrayList<Answer> answerArr = new ArrayList<>();
+        answerArr.add(this.answer);
+        return answerArr;
     }
 
     @Override

@@ -1,10 +1,8 @@
 package nl.hsleiden.model;
 
 import nl.hsleiden.observer.Observer;
-import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Question implements Content, QuestionSubject {
@@ -20,17 +18,17 @@ public class Question implements Content, QuestionSubject {
 
     @Override
     public int getId() {
-        return 0;
+        return this.id;
     }
 
     @Override
     public String getValue() {
-        return null;
+        return this.value;
     }
 
     @Override
-    public Answer getAnswer() {
-        return null;
+    public ArrayList<Answer> getAnswer() {
+        return this.answers;
     }
 
     @Override

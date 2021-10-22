@@ -29,8 +29,10 @@ public class Explanation implements Content, ExplanationSubject {
     }
 
     @Override
-    public Answer getAnswer() {
-        return null;
+    public ArrayList getAnswer() {
+        ArrayList<Answer> answerArr = new ArrayList<>();
+        answerArr.add(this.answer);
+        return answerArr;
     }
 
     @Override
