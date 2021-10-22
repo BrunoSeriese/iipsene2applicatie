@@ -59,7 +59,6 @@ public class ContentController {
     }
 
     public void nextContent() {
-        historyService.add(new Explanation(1,"checkme",new Answer(1,"world", 1,1)), new Answer(1,"world", 1,1));
         Pair<Content, Answer> historyContent = historyService.getLast();
         int nextContentId = historyContent.getValue().getNextContentId();
         Content content = getContentById(nextContentId);
