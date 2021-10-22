@@ -37,13 +37,9 @@ public class QuestionController {
     }
 
     public void sendNextContent() {
-
         System.out.println("this works!");
         contentController.nextContent();
         contentController.nextContentId();
-
-
-
     }
 
     public String unpackQuestions() {
