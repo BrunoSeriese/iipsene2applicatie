@@ -13,7 +13,9 @@ public class Question implements Content, QuestionSubject {
     private ArrayList<Answer> answers;
 
     public Question(int id, String value, ArrayList<Answer> answers ) {
-
+        this.id = id;
+        this.value = value;
+        this.answers = answers;
     }
 
     @Override

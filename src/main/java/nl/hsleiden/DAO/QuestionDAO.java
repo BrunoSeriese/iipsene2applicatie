@@ -56,9 +56,9 @@ public class QuestionDAO implements DAO<Question> {
     public void getQuestions() throws IOException {
         ArrayList listdata = new ArrayList();
         JSONArray json = new JSONArray(IOUtils.toString(new URL("http://localhost:8080/questions"), StandardCharsets.UTF_8));
-        ArrayList<Question> questions = new ArrayList<>();
 
-            //Iterating JSON arrayl
+
+
             for (int i=0;i<json.length();i++){
 
                 //Adding each element of JSON array into ArrayList
@@ -81,9 +81,8 @@ public class QuestionDAO implements DAO<Question> {
                     int anextContentId = (int) currentAnswer.get("nextContentId");
                     questionAnswers.add(new Answer(aid,avalue,acurrentContentId,anextContentId));
                 }
-                questions.add(new Question(questionID,value,questionAnswers));
-                Question newQuestion = new Question(questionID,value,questionAnswers);
-                System.out.println(newQuestion.getId());
+
+
                 contentController.add(new Question(questionID,value,questionAnswers));
 
             }
