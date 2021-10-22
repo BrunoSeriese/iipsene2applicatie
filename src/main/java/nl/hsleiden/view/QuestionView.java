@@ -22,14 +22,7 @@ public class QuestionView implements QuestionObserver, Initializable {
     }
 
     @FXML
-    RadioButton Button1;
-    @FXML
-    RadioButton Button2;
-    @FXML
-    RadioButton Button3;
-    @FXML
-    RadioButton Button4;
-
+    public RadioButton Button1, Button2, Button3, Button4;
     @FXML
     private TextArea answer1, answer2, answer3, answer4;
     @FXML
@@ -46,6 +39,17 @@ public class QuestionView implements QuestionObserver, Initializable {
     public void update(QuestionSubject state) {
 
     }
+
+    public void previousContent() {
+        System.out.println("previous content is coming");
+        questionController.getPreviousContent();
+
+        questionContainer.setText(questionController.unpackQuestions());
+        for (int i = 0; i < 4; i++) {
+            answerList.get(i).setText(questionController.unpackAnswers().get(i));
+        }
+    }
+
 
     public void nextContent() {
         System.out.println("next content is coming!");
