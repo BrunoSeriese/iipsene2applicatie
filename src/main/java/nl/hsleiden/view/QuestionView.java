@@ -34,14 +34,11 @@ public class QuestionView implements QuestionObserver, Initializable {
     private TextArea answer1, answer2, answer3, answer4;
     @FXML
     private TextArea questionContainer;
+
     public TextArea[] answerList;
 
 
 
-    @FXML
-    public void onbtnclick() {
-        System.out.println("HET WERKT");
-    }
 
     @Override
     public void update(QuestionSubject state) {
@@ -49,9 +46,7 @@ public class QuestionView implements QuestionObserver, Initializable {
     }
 
     public void nextContent() {
-        System.out.println("next content is coming!");
-        questionController.sendNextContent();
-
+        questionController.sendNextContent(answerList);
     }
 
     @Override
@@ -59,5 +54,6 @@ public class QuestionView implements QuestionObserver, Initializable {
         answerList = new TextArea[]{
                 answer1, answer2, answer3, answer4
         };
+        questionController.sendNextContent(answerList);
     }
 }

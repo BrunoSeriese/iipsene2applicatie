@@ -1,9 +1,11 @@
 package nl.hsleiden.controller;
 
+import javafx.scene.control.TextArea;
 import nl.hsleiden.DAO.NetworkDAO;
 import nl.hsleiden.DAO.QuestionDAO;
 import nl.hsleiden.service.HistoryService;
 import nl.hsleiden.service.QuestionService;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 
@@ -36,12 +38,16 @@ public class QuestionController {
 
     }
 
-    public void sendNextContent() {
+    public void sendNextContent(TextArea[] list) {
         System.out.println("this works!");
         contentController.nextContent();
-        contentController.unpackContent();
+        contentController.unpackAnswer(list);
         contentController.nextContentId();
     }
+
+
+
+
 
     public void getQuestions() {
         questionDAO.getQuestions();

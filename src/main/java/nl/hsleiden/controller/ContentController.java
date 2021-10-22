@@ -1,5 +1,6 @@
 package nl.hsleiden.controller;
 
+import javafx.scene.control.TextArea;
 import nl.hsleiden.model.Answer;
 import nl.hsleiden.model.Content;
 import nl.hsleiden.service.HistoryService;
@@ -36,20 +37,30 @@ public class ContentController {
 
 
 
-    public void unpackContent() {
-
+    public void unpackQuestion(TextArea textArea) {
         for (Content content : ourDatabase) {
             if (content.getId() == currentContentId) {
-                System.out.println(content.getId());
-                System.out.println(content.getValue());
-
-                for (Answer answer : content.getAnswer()) {
-                    System.out.println(answer.getValue());
-                }
+                setTextQuestion(textArea, content);
             }
         }
     }
 
+    public void setTextQuestion(TextArea textArea, Content content){
+        textArea.setText(content.getValue());
+    }
+
+    public void unpackAnswer(TextArea[] list) {
+        for (Content content : ourDatabase) {
+            if (content.getId() == currentContentId) {
+                for (Answer answer : content.getAnswer()) {
+                    for (TextArea ta: list) {
+//                        ta.setText(answer.getValue());
+                        System.out.println(ta.);
+                    }
+                }
+            }
+        }
+    }
 
 
 
