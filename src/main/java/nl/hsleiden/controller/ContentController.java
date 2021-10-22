@@ -6,6 +6,7 @@ import nl.hsleiden.service.HistoryService;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 public class ContentController {
@@ -35,9 +36,13 @@ public class ContentController {
         ResultController.getInstance().getResults();
 
         for (Content content : ourDatabase) {
+
             System.out.println(content.getId());
             System.out.println(content.getValue());
-            System.out.println(content.getAnswer().toString());
+
+            for (Answer answer: content.getAnswer()) {
+                System.out.println(answer.getValue());
+            }
         }
     }
 
