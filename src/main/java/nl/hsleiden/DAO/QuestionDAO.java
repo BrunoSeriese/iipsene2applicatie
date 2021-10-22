@@ -53,27 +53,18 @@ public class QuestionDAO implements DAO<Question> {
     public void delete(Question question) {
 
     }
-    public void getQuestions() throws IOException {
-        ArrayList listdata = new ArrayList();
-        JSONArray json = new JSONArray(IOUtils.toString(new URL("http://localhost:8080/questions"), StandardCharsets.UTF_8));
 
-
-
+    public void getQuestions() {
+        try {
+            JSONArray json = new JSONArray(IOUtils.toString(new URL("http://localhost:8080/questions"), StandardCharsets.UTF_8));
             for (int i=0;i<json.length();i++){
-
-                //Adding each element of JSON array into ArrayList
-                listdata.add(json.get(i));
                 JSONObject newObj = (JSONObject) json.get(i);
                 int questionID = (int) newObj.get("id");
                 String value = (String) newObj.get("value");
                 JSONArray answers = (JSONArray) newObj.get("answers");
                 ArrayList<Answer> questionAnswers = new ArrayList<>();
 
-
-
                 for (int j = 0; j<answers.length();j++){
-
-
                     JSONObject currentAnswer = (JSONObject) answers.get(j);
                     int aid = (int) currentAnswer.get("id");
                     String avalue = (String) currentAnswer.get("value");
@@ -81,12 +72,11 @@ public class QuestionDAO implements DAO<Question> {
                     int anextContentId = (int) currentAnswer.get("nextContentId");
                     questionAnswers.add(new Answer(aid,avalue,acurrentContentId,anextContentId));
                 }
-
-
                 contentController.add(new Question(questionID,value,questionAnswers));
-
             }
-
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 }
