@@ -1,5 +1,6 @@
 package nl.hsleiden.service;
 
+import javafx.util.Pair;
 import nl.hsleiden.model.Answer;
 import nl.hsleiden.model.Content;
 
@@ -8,15 +9,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HistoryService {
-    private final ArrayList<Map<Content, Answer>> history = new ArrayList<>();
+    private final ArrayList<Pair<Content, Answer>> history = new ArrayList<>();
 
     public HistoryService(){
 
     }
 
     public void add(Content content, Answer answer) {
-        Map<Content, Answer> history = new HashMap<>();
-        history.put(content, answer);
+        Pair<Content, Answer> history = new Pair<>(content, answer);
         this.history.add(history);
     }
 
@@ -28,15 +28,15 @@ public class HistoryService {
         history.remove(history.size() - 1);
     }
 
-    public Map<Content, Answer> get(int id) {
+    public Pair<Content, Answer> get(int id) {
         return history.get(id);
     }
 
-    public ArrayList<Map<Content, Answer>> getHistory() {
+    public ArrayList<Pair<Content, Answer>> getHistory() {
         return history;
     }
 
-    public Map<Content, Answer> getLast() {
+    public Pair<Content, Answer> getLast() {
         return history.get(history.size() - 1);
     }
 }

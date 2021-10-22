@@ -62,7 +62,7 @@ public class ResultDAO implements DAO<Result> {
             Answer newAnswer = new Answer(aid, avalue, acurrentContentId, anextContentId);
 
             Result newResult = new Result(rid, rvalue, newAnswer);
-            contentController.add(newResult);
+            contentController.addContent(newResult);
 
         }
 

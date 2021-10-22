@@ -72,7 +72,7 @@ public class QuestionDAO implements DAO<Question> {
                     int anextContentId = (int) currentAnswer.get("nextContentId");
                     questionAnswers.add(new Answer(aid,avalue,acurrentContentId,anextContentId));
                 }
-                contentController.add(new Question(questionID,value,questionAnswers));
+                contentController.addContent(new Question(questionID,value,questionAnswers));
             }
         } catch (IOException e) {
             e.printStackTrace();
