@@ -27,8 +27,6 @@ public class QuestionDAO implements DAO<Question> {
 
     }
 
-
-
     @Override
     public List<Question> getAll() {
         return null;

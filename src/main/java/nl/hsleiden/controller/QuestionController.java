@@ -1,5 +1,6 @@
 package nl.hsleiden.controller;
 
+import nl.hsleiden.DAO.AnswerDAO;
 import nl.hsleiden.DAO.NetworkDAO;
 import nl.hsleiden.DAO.QuestionDAO;
 import nl.hsleiden.service.HistoryService;
@@ -15,6 +16,7 @@ public class QuestionController {
     private final ContentController contentController;
     private final NetworkDAO networkDAO;
     private final HistoryService historyService = new HistoryService();
+
 
     private QuestionController(QuestionDAO questionDAO, QuestionService questionService) {
         this.questionDAO = questionDAO;
@@ -33,15 +35,12 @@ public class QuestionController {
 
     public void getPreviousContent() {
         //TODO spreek met de historyService en haal de vorige content op
-
-
         contentController.previousContentId();
     }
 
     public void sendNextContent() {
-        System.out.println("this works!");
-        contentController.nextContent();
-        contentController.nextContentId();
+//        contentController.nextContent();
+//        contentController.nextContentId();
     }
 
 
@@ -53,10 +52,17 @@ public class QuestionController {
         return contentController.unpackAnswers();
     }
 
+    public ArrayList<Integer> unpackAnswersId() {
+        return contentController.unpackAnswersId();
+    }
+
 
     public void getQuestions() {
         questionDAO.getQuestions();
     }
 
 
+    public void setNextContentId(int id) {
+        contentController.nextContentId(id);
+    }
 }

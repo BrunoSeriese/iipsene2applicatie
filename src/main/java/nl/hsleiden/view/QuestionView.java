@@ -2,8 +2,10 @@ package nl.hsleiden.view;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
 import nl.hsleiden.controller.QuestionController;
 import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
@@ -15,12 +17,8 @@ import java.util.ResourceBundle;
 public class QuestionView implements QuestionObserver, Initializable {
 
     private final QuestionController questionController;
-
-
-    public QuestionView() {
-        questionController = QuestionController.getInstance();
-    }
-
+    @FXML
+    public ToggleGroup group;
     @FXML
     public RadioButton Button1, Button2, Button3, Button4;
     @FXML
@@ -29,10 +27,8 @@ public class QuestionView implements QuestionObserver, Initializable {
     private TextArea questionContainer;
     public ArrayList<TextArea> answerList = new ArrayList<>();
 
-
-    @FXML
-    public void onbtnclick() {
-        System.out.println("HET WERKT");
+    public QuestionView() {
+        questionController = QuestionController.getInstance();
     }
 
     @Override
@@ -41,7 +37,6 @@ public class QuestionView implements QuestionObserver, Initializable {
     }
 
     public void previousContent() {
-        System.out.println("previous content is coming");
         questionController.getPreviousContent();
 
         questionContainer.setText(questionController.unpackQuestions());
@@ -52,15 +47,23 @@ public class QuestionView implements QuestionObserver, Initializable {
 
 
     public void nextContent() {
-        System.out.println("next content is coming!");
-        questionController.sendNextContent();
-        questionContainer.setText(questionController.unpackQuestions());
+        RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
+        if (chosenButton == Button1){
+            questionController.setNextContentId(Integer.parseInt(answer1.getId()));
+        } else if (chosenButton == Button2){
+            questionController.setNextContentId(Integer.parseInt(answer2.getId()));
+        }else if (chosenButton == Button3){
+            questionController.setNextContentId(Integer.parseInt(answer3.getId()));
+        }else if (chosenButton == Button4){
+            questionController.setNextContentId(Integer.parseInt(answer4.getId()));
+        }
 
+        questionContainer.setText(questionController.unpackQuestions());
         for (int i = 0; i < 4; i++) {
             answerList.get(i).setText(questionController.unpackAnswers().get(i));
+            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
         }
     }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -73,6 +76,7 @@ public class QuestionView implements QuestionObserver, Initializable {
 
         for (int i = 0; i < answerList.size(); i++) {
             answerList.get(i).setText(questionController.unpackAnswers().get(i));
+            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
         }
     }
 }

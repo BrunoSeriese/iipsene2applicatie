@@ -90,6 +90,22 @@ public class ContentController {
         return list;
     }
 
+    public ArrayList<Integer> unpackAnswersId() {
+        int tmpAnswersId;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (Content content : ourDatabase) {
+            if (content.getId() == currentContentId) {
+                for (Answer answer : content.getAnswer()) {
+                    tmpAnswersId = answer.getNextContentId();
+                    list.add(tmpAnswersId);
+                }
+            }
+        }
+
+        return list;
+    }
+
 
     public void addContent(Content content) {
         ourDatabase.add(content);
@@ -129,11 +145,14 @@ public class ContentController {
 //        }
     }
 
-    public void nextContentId() {
+    public void nextContentId(int id) {
        //TODO unpackAnswers moet eigenlijk het aantal vragen zijn dus unpackQuestions, maar daar zitten nu resultaten is dus heb het zo moeten doen.
-       if (this.currentContentId <= unpackAnswers().size()){
-           this.currentContentId++;
-       }
+//       if (this.currentContentId <= unpackAnswers().size()){
+//           this.currentContentId++;
+//       }
+
+       this.currentContentId = id;
+
     }
 
     public void previousContentId() {
@@ -141,6 +160,7 @@ public class ContentController {
             this.currentContentId--;
         }
     }
+
 
 
 }
