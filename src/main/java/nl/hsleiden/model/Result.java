@@ -12,6 +12,11 @@ public class Result implements Content, ResultSubject {
     private String value;
     private Answer answer;
 
+    public Result(int id, String value) {
+        this.id = id;
+        this.value = value;
+    }
+
     public Result(int id, String value, Answer answer) {
         this.id = id;
         this.value = value;
@@ -29,10 +34,10 @@ public class Result implements Content, ResultSubject {
     }
 
     @Override
-    public ArrayList getAnswer() {
-        ArrayList<Answer> answerArr = new ArrayList<>();
-        answerArr.add(this.answer);
-        return answerArr;
+    public ArrayList<Answer> getAnswer() {
+        ArrayList<Answer> answer = new ArrayList<>();
+        answer.add(this.answer);
+        return answer;
     }
 
     @Override

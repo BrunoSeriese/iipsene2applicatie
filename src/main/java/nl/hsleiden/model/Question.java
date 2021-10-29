@@ -13,17 +13,16 @@ public class Question implements Content, QuestionSubject, Serializable {
     private String value;
     private ArrayList<Answer> answers;
 
+    public Question(int id, String value) {
+        this.id = id;
+        this.value = value;
+    }
+
     public Question(int id, String value, ArrayList<Answer> answers ) {
         this.id = id;
         this.value = value;
         this.answers = answers;
     }
-
-    public Question(int id, String value, Answer[] answers) {
-
-    }
-
-
 
     @Override
     public int getId() {
@@ -39,7 +38,6 @@ public class Question implements Content, QuestionSubject, Serializable {
     public ArrayList<Answer> getAnswer() {
         return this.answers;
     }
-
 
     @Override
     public void registerObserver(Observer<QuestionSubject> observer) {
