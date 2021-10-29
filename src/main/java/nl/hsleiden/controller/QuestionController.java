@@ -10,25 +10,20 @@ import java.io.IOException;
 
 public class QuestionController {
     private static QuestionController questionController;
-    private final QuestionDAO questionDAO;
     private final QuestionService questionService;
     private final SceneController sceneController;
     private final ContentController contentController;
-    private final NetworkDAO networkDAO;
     private final HistoryService historyService = new HistoryService();
 
-    private QuestionController(QuestionDAO questionDAO,
-                              QuestionService questionService) {
-        this.questionDAO = questionDAO;
-        this.questionService = questionService;
+    private QuestionController() {
+        questionService = new QuestionService();
         sceneController = SceneController.getInstance();
         contentController = ContentController.getInstance();
-        networkDAO = NetworkDAO.getInstance();
     }
 
     public synchronized static QuestionController getInstance() {
         if(questionController == null) {
-            questionController = new QuestionController(new QuestionDAO(), new QuestionService());
+            questionController = new QuestionController();
         }
         return questionController;
     }
@@ -39,14 +34,14 @@ public class QuestionController {
 
     }
 
-    public void sendNextContent() throws IOException {
+    public void sendNextContent() {
 
         System.out.println("this works!");
         contentController.nextContent();
     }
 
-    public void getQuestions() throws IOException {
-        questionDAO.getQuestions();
+    public void getQuestions() {
+        questionService.getAll();
     }
 
 }

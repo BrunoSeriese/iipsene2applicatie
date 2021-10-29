@@ -40,6 +40,10 @@ public class Explanation implements Content, ExplanationSubject {
         return answer;
     }
 
+    public void setAnswer(Answer answer) {
+        this.answer = answer;
+    }
+
     @Override
     public void registerObserver(Observer<ExplanationSubject> observer) {
         observers.add(observer);

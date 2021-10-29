@@ -6,17 +6,15 @@ import nl.hsleiden.service.VideoService;
 
 public class VideoController {
     private static VideoController videoController;
-    private final VideoDAO videoDAO;
     private final VideoService videoService;
 
-    private VideoController(VideoDAO videoDAO, VideoService videoService) {
-        this.videoDAO = videoDAO;
-        this.videoService = videoService;
+    private VideoController() {
+        videoService = new VideoService();
     }
 
     public synchronized static VideoController getInstance() {
         if(videoController == null) {
-            videoController = new VideoController(new VideoDAO(), new VideoService());
+            videoController = new VideoController();
         }
         return videoController;
     }

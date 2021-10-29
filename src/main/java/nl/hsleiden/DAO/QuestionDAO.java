@@ -1,37 +1,54 @@
 package nl.hsleiden.DAO;
 
-
-
-import nl.hsleiden.controller.ContentController;
-import nl.hsleiden.controller.SceneController;
 import nl.hsleiden.model.Answer;
 import nl.hsleiden.model.Question;
-import nl.hsleiden.service.HistoryService;
+import nl.hsleiden.service.AnswerService;
+import nl.hsleiden.service.ApiService;
+import nl.hsleiden.service.QuestionService;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionDAO implements DAO<Question> {
-    private static QuestionDAO questionDAO;
-    private final ContentController contentController;
+    private final String api = new ApiService().getApi();
+    private final AnswerService answerService;
+    private final QuestionService questionService;
 
-    public QuestionDAO(){
-    contentController = ContentController.getInstance();
-
+    public QuestionDAO(QuestionService questionService) {
+        answerService = new AnswerService();
+        this.questionService = questionService;
     }
-
-
 
     @Override
     public List<Question> getAll() {
-        return null;
+        List<Question> questions = new ArrayList<>();
+        String api = this.api + "/questions";
+        try {
+            JSONArray json = new JSONArray(IOUtils.toString(new URL(api), StandardCharsets.UTF_8));
+            for (int i = 0; i < json.length(); i++) {
+                JSONObject question = (JSONObject) json.get(i);
+                Question newQuestion = questionService.unpack(question);
+
+                JSONArray answers = (JSONArray) question.get("answers");
+                ArrayList<Answer> newAnswers = new ArrayList<>();
+                for (int j = 0; j < answers.length(); j++) {
+                    JSONObject answer = (JSONObject) answers.get(j);
+                    Answer newAnswer = answerService.unpack(answer);
+                    newAnswers.add(newAnswer);
+                }
+                newQuestion.setAnswers(newAnswers);
+                questions.add(newQuestion);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return questions;
     }
 
     @Override
@@ -52,31 +69,6 @@ public class QuestionDAO implements DAO<Question> {
     @Override
     public void delete(Question question) {
 
-    }
-
-    public void getQuestions() {
-        try {
-            JSONArray json = new JSONArray(IOUtils.toString(new URL("http://localhost:8080/questions"), StandardCharsets.UTF_8));
-            for (int i=0;i<json.length();i++){
-                JSONObject newObj = (JSONObject) json.get(i);
-                int questionID = (int) newObj.get("id");
-                String value = (String) newObj.get("value");
-                JSONArray answers = (JSONArray) newObj.get("answers");
-                ArrayList<Answer> questionAnswers = new ArrayList<>();
-
-                for (int j = 0; j<answers.length();j++){
-                    JSONObject currentAnswer = (JSONObject) answers.get(j);
-                    int aid = (int) currentAnswer.get("id");
-                    String avalue = (String) currentAnswer.get("value");
-                    int acurrentContentId = (int) currentAnswer.get("currentContentId");
-                    int anextContentId = (int) currentAnswer.get("nextContentId");
-                    questionAnswers.add(new Answer(aid,avalue,acurrentContentId,anextContentId));
-                }
-                contentController.addContent(new Question(questionID,value,questionAnswers));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 }

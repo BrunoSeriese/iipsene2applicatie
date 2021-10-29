@@ -13,20 +13,17 @@ import java.io.IOException;
 
 public class ResultController {
     private static ResultController resultController;
-    private final ResultDAO resultDAO;
     private final ResultService resultService;
     private final SceneController sceneController;
 
-    private ResultController(ResultDAO resultDAO, ResultService resultService) {
-        this.resultDAO = resultDAO;
-        this.resultService = resultService;
-
+    private ResultController() {
+        resultService = new ResultService();
         sceneController = SceneController.getInstance();
     }
 
     public synchronized static ResultController getInstance() {
         if(resultController == null) {
-            resultController = new ResultController(new ResultDAO(), new ResultService());
+            resultController = new ResultController();
         }
         return resultController;
     }
@@ -48,7 +45,7 @@ public class ResultController {
 
     }
 
-    public void getResults() throws IOException {
-        resultDAO.getResults();
+    public void getResults() {
+        resultService.getAll();
     }
 }

@@ -40,6 +40,10 @@ public class Result implements Content, ResultSubject {
         return answer;
     }
 
+    public void setAnswer(Answer answer) {
+        this.answer = answer;
+    }
+
     @Override
     public void registerObserver(Observer<ResultSubject> observer) {
         observers.add(observer);

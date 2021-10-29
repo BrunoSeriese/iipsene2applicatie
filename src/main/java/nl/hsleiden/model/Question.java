@@ -39,6 +39,10 @@ public class Question implements Content, QuestionSubject, Serializable {
         return this.answers;
     }
 
+    public void setAnswers(ArrayList<Answer> answers) {
+        this.answers = answers;
+    }
+
     @Override
     public void registerObserver(Observer<QuestionSubject> observer) {
         observers.add(observer);

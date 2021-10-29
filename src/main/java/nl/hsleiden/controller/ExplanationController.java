@@ -8,22 +8,19 @@ import java.io.IOException;
 
 public class ExplanationController {
     private static ExplanationController explanationController;
-    private final ExplanationDAO explanationDAO;
     private final ExplanationService explanationService;
     private final SceneController sceneController;
     private final ContentController contentController;
 
-    private ExplanationController(ExplanationDAO explanationDAO,
-                                 ExplanationService explanationService) {
-        this.explanationDAO = explanationDAO;
-        this.explanationService = explanationService;
+    private ExplanationController() {
+        explanationService = new ExplanationService();
         sceneController = SceneController.getInstance();
         contentController = ContentController.getInstance();
     }
 
     public synchronized static ExplanationController getInstance() {
         if (explanationController == null) {
-            explanationController = new ExplanationController(new ExplanationDAO(), new ExplanationService());
+            explanationController = new ExplanationController();
         }
         return explanationController;
     }

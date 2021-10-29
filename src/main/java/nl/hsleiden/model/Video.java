@@ -40,6 +40,10 @@ public class Video implements Content, VideoSubject {
         return answer;
     }
 
+    public void setAnswer(Answer answer) {
+        this.answer = answer;
+    }
+
     @Override
     public void registerObserver(Observer<VideoSubject> observer) {
         observers.add(observer);

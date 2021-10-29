@@ -3,6 +3,9 @@ package nl.hsleiden.DAO;
 import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.model.Answer;
 import nl.hsleiden.model.Result;
+import nl.hsleiden.service.AnswerService;
+import nl.hsleiden.service.ApiService;
+import nl.hsleiden.service.ResultService;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,15 +18,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResultDAO implements DAO<Result> {
-    private final ContentController contentController;
+    private final String api = new ApiService().getApi();
+    private final AnswerService answerService;
+    private final ResultService resultService;
 
-    public ResultDAO(){
-        contentController = ContentController.getInstance();
+    public ResultDAO(ResultService resultService) {
+        answerService = new AnswerService();
+        this.resultService = resultService;
     }
 
     @Override
     public List<Result> getAll() {
-        return null;
+        List<Result> results = new ArrayList<>();
+        try {
+            JSONArray json = new JSONArray(IOUtils.toString(new URL(api + "/results"), StandardCharsets.UTF_8));
+
+            for (int i = 0; i < json.length(); i++) {
+                JSONObject result = (JSONObject) json.get(i);
+                Result newResult = resultService.unpack(result);
+
+                JSONObject answer = (JSONObject) result.get("answer");
+                Answer newAnswer = answerService.unpack(answer);
+                newResult.setAnswer(newAnswer);
+
+                results.add(newResult);
+            }
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+        return results;
     }
 
     @Override
@@ -43,29 +66,6 @@ public class ResultDAO implements DAO<Result> {
 
     @Override
     public void delete(Result result) {
-
-    }
-
-    public void getResults() throws IOException {
-        JSONArray json = new JSONArray(IOUtils.toString(new URL("http://localhost:8080/results"), StandardCharsets.UTF_8));
-
-        for (int i=0;i<json.length();i++){
-            JSONObject result = (JSONObject) json.get(i);
-            int rid = (int) result.get("id");
-            String rvalue = (String) result.get("value");
-
-            int aid = 0;
-            String avalue = null;
-            int acurrentContentId = 0;
-            int anextContentId = 0;
-
-            Answer newAnswer = new Answer(aid, avalue, acurrentContentId, anextContentId);
-
-            Result newResult = new Result(rid, rvalue, newAnswer);
-            contentController.addContent(newResult);
-
-        }
-
 
     }
 }
