@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class QuestionView implements QuestionObserver, Initializable {
+public class QuestionView implements QuestionObserver {
 
     private final QuestionController questionController;
     @FXML
@@ -37,46 +37,46 @@ public class QuestionView implements QuestionObserver, Initializable {
     }
 
     public void previousContent() {
-        questionController.getPreviousContent();
-
-        questionContainer.setText(questionController.unpackQuestions());
-        for (int i = 0; i < 4; i++) {
-            answerList.get(i).setText(questionController.unpackAnswers().get(i));
-        }
+//        questionController.getPreviousContent();
+//
+//        questionContainer.setText(questionController.unpackQuestions());
+//        for (int i = 0; i < 4; i++) {
+//            answerList.get(i).setText(questionController.unpackAnswers().get(i));
+//        }
     }
 
 
     public void nextContent() {
-        RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
-        if (chosenButton == Button1){
-            questionController.setNextContentId(Integer.parseInt(answer1.getId()));
-        } else if (chosenButton == Button2){
-            questionController.setNextContentId(Integer.parseInt(answer2.getId()));
-        }else if (chosenButton == Button3){
-            questionController.setNextContentId(Integer.parseInt(answer3.getId()));
-        }else if (chosenButton == Button4){
-            questionController.setNextContentId(Integer.parseInt(answer4.getId()));
-        }
-
-        questionContainer.setText(questionController.unpackQuestions());
-        for (int i = 0; i < 4; i++) {
-            answerList.get(i).setText(questionController.unpackAnswers().get(i));
-            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
-        }
+//        RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
+//        if (chosenButton == Button1){
+//            questionController.setNextContentId(Integer.parseInt(answer1.getId()));
+//        } else if (chosenButton == Button2){
+//            questionController.setNextContentId(Integer.parseInt(answer2.getId()));
+//        }else if (chosenButton == Button3){
+//            questionController.setNextContentId(Integer.parseInt(answer3.getId()));
+//        }else if (chosenButton == Button4){
+//            questionController.setNextContentId(Integer.parseInt(answer4.getId()));
+//        }
+//
+//        questionContainer.setText(questionController.unpackQuestions());
+//        for (int i = 0; i < 4; i++) {
+//            answerList.get(i).setText(questionController.unpackAnswers().get(i));
+//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
+//        }
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        answerList.add(answer1);
-        answerList.add(answer2);
-        answerList.add(answer3);
-        answerList.add(answer4);
-
-        questionContainer.setText(questionController.unpackQuestions());
-
-        for (int i = 0; i < answerList.size(); i++) {
-            answerList.get(i).setText(questionController.unpackAnswers().get(i));
-            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
-        }
-    }
+//
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        answerList.add(answer1);
+//        answerList.add(answer2);
+//        answerList.add(answer3);
+//        answerList.add(answer4);
+//
+//        questionContainer.setText(questionController.unpackQuestions());
+//
+//        for (int i = 0; i < answerList.size(); i++) {
+//            answerList.get(i).setText(questionController.unpackAnswers().get(i));
+//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
+//        }
+//    }
 }
