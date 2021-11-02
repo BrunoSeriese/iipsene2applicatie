@@ -15,7 +15,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class QuestionView implements QuestionObserver {
+public class QuestionView implements QuestionObserver, Initializable {
 
     private final QuestionController questionController;
     @FXML
@@ -51,7 +51,10 @@ public class QuestionView implements QuestionObserver {
         Content content = questionController.sendNextContent();
         questionContainer.setText(content.getValue());
 
-
+        for (int i = 0; i < answerList.size(); i++) {
+            answerList.get(i).setText(content.getAnswer().get(i).getValue());
+//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
+        }
 
 
 
@@ -76,18 +79,23 @@ public class QuestionView implements QuestionObserver {
 //        }
     }
 //
-//    @Override
-//    public void initialize(URL url, ResourceBundle resourceBundle) {
-//        answerList.add(answer1);
-//        answerList.add(answer2);
-//        answerList.add(answer3);
-//        answerList.add(answer4);
-//
-//        questionContainer.setText(questionController.unpackQuestions());
-//
-//        for (int i = 0; i < answerList.size(); i++) {
-//            answerList.get(i).setText(questionController.unpackAnswers().get(i));
-//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Content content = questionController.sendNextContent();
+        questionContainer.setText(content.getValue());
+
+//        for(int i = 0; i < content.getAnswer().size(); i++){
+//            System.out.println(content.getAnswer().get(i).getValue());
 //        }
-//    }
+
+        answerList.add(answer1);
+        answerList.add(answer2);
+        answerList.add(answer3);
+        answerList.add(answer4);
+
+        for (int i = 0; i < answerList.size(); i++) {
+            answerList.get(i).setText(content.getAnswer().get(i).getValue());
+//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
+        }
+    }
 }
