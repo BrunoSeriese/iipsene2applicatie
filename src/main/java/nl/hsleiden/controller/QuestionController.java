@@ -28,7 +28,7 @@ public class QuestionController {
 
     public synchronized static QuestionController getInstance() {
         if (questionController == null) {
-            questionController = new QuestionController(new QuestionDAO(), new QuestionService());
+            questionController = new QuestionController(new QuestionDAO(getInstance().questionService), new QuestionService());
         }
         return questionController;
     }
@@ -58,7 +58,7 @@ public class QuestionController {
 
 
     public void getQuestions() {
-        questionDAO.getQuestions();
+        questionDAO.getAll();
     }
 
 

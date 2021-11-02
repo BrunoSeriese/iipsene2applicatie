@@ -23,7 +23,7 @@ public class ExplanationController {
 
     public synchronized static ExplanationController getInstance() {
         if (explanationController == null) {
-            explanationController = new ExplanationController(new ExplanationDAO(), new ExplanationService());
+            explanationController = new ExplanationController(new ExplanationDAO(getInstance().explanationService), new ExplanationService());
         }
         return explanationController;
     }

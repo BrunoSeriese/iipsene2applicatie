@@ -28,6 +28,7 @@ public class ExplanationDAO implements DAO<Explanation> {
         this.explanationService = explanationService;
     }
 
+
     @Override
     public List<Explanation> getAll() {
         List<Explanation> explanations = new ArrayList<>();
