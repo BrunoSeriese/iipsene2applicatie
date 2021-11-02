@@ -7,6 +7,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
 import nl.hsleiden.controller.QuestionController;
+import nl.hsleiden.model.Content;
 import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
@@ -47,6 +48,16 @@ public class QuestionView implements QuestionObserver {
 
 
     public void nextContent() {
+        Content content = questionController.sendNextContent();
+        questionContainer.setText(content.getValue());
+
+
+
+
+
+
+
+
 //        RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
 //        if (chosenButton == Button1){
 //            questionController.setNextContentId(Integer.parseInt(answer1.getId()));

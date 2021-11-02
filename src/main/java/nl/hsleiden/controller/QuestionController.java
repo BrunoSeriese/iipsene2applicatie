@@ -1,12 +1,9 @@
 package nl.hsleiden.controller;
 
-import nl.hsleiden.DAO.NetworkDAO;
-import nl.hsleiden.DAO.QuestionDAO;
+import nl.hsleiden.model.Content;
 import nl.hsleiden.service.QuestionService;
 
 import nl.hsleiden.service.HistoryService;
-
-import java.io.IOException;
 
 public class QuestionController {
     private static QuestionController questionController;
@@ -34,10 +31,9 @@ public class QuestionController {
 
     }
 
-    public void sendNextContent() {
+    public Content sendNextContent() {
+        return contentController.nextContent();
 
-        System.out.println("this works!");
-        contentController.nextContent();
     }
 
     public void getQuestions() {
