@@ -51,6 +51,10 @@ public class ContentController {
         return null;
     }
 
+    public int getId(){
+        return contentId;
+    }
+
     public void prevousContent() {
         Pair<Content, Answer> historyContent = historyService.getLast();
         int nextContentId = historyContent.getValue().getNextContentId();
@@ -73,6 +77,7 @@ public class ContentController {
         } else if (content instanceof Result) {
             System.out.println("resultaten");
             sceneController.switchToNextScreen("Result.fxml");
+
             return content;
         } else if (content instanceof Explanation) {
             System.out.println("uitleg");

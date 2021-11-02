@@ -52,7 +52,7 @@ public class ResultController {
         resultService.getAll();
     }
 
-//    public Content sendContent() {
-//        return contentController.nextContent();
-//    }
+    public Content sendContent() {
+        return contentController.getContentById(contentController.getId());
+    }
 }

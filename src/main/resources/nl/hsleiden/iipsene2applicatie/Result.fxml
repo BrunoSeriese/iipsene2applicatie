@@ -25,5 +25,6 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </TextArea>
+      <Button fx:id="resultButton" onMouseClicked="#sendContent" layoutX="542.0" layoutY="62.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>
