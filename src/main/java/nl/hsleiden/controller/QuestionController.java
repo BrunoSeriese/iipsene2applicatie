@@ -36,6 +36,10 @@ public class QuestionController {
 
     }
 
+    public void setNextContentId(int id){
+        contentController.nextContentId(id);
+    }
+
     public void getQuestions() {
         questionService.getAll();
     }

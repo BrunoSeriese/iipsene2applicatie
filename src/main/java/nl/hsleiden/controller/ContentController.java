@@ -63,9 +63,7 @@ public class ContentController {
         if (content instanceof Question) {
             System.out.println("vraag");
 //            sceneController.switchToNextScreen();
-            System.out.println(content.getValue());
-            System.out.println(content.getAnswer());
-            nextContentId();
+            nextContentId(contentId);
             return content;
         } else if (content instanceof Video) {
             System.out.println("video");
@@ -82,8 +80,9 @@ public class ContentController {
         return content;
     }
 
-    public void nextContentId() {
-        this.contentId += 1;
+    public void nextContentId(int id) {
+        System.out.println("CONTENT ID NEEF: " + contentId);
+        this.contentId = id;
     }
 //
 //    public void previousContentId() {

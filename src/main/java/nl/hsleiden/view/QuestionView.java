@@ -48,45 +48,32 @@ public class QuestionView implements QuestionObserver, Initializable {
 
 
     public void nextContent() {
+        RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
+        if (chosenButton == Button1){
+            questionController.setNextContentId(Integer.parseInt(answer1.getId()));
+        } else if (chosenButton == Button2){
+            questionController.setNextContentId(Integer.parseInt(answer2.getId()));
+        }else if (chosenButton == Button3){
+            questionController.setNextContentId(Integer.parseInt(answer3.getId()));
+        }else if (chosenButton == Button4){
+            questionController.setNextContentId(Integer.parseInt(answer4.getId()));
+        }
+
         Content content = questionController.sendNextContent();
         questionContainer.setText(content.getValue());
 
         for (int i = 0; i < answerList.size(); i++) {
             answerList.get(i).setText(content.getAnswer().get(i).getValue());
-//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
+            answerList.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
         }
 
-
-
-
-
-
-//        RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
-//        if (chosenButton == Button1){
-//            questionController.setNextContentId(Integer.parseInt(answer1.getId()));
-//        } else if (chosenButton == Button2){
-//            questionController.setNextContentId(Integer.parseInt(answer2.getId()));
-//        }else if (chosenButton == Button3){
-//            questionController.setNextContentId(Integer.parseInt(answer3.getId()));
-//        }else if (chosenButton == Button4){
-//            questionController.setNextContentId(Integer.parseInt(answer4.getId()));
-//        }
-//
-//        questionContainer.setText(questionController.unpackQuestions());
-//        for (int i = 0; i < 4; i++) {
-//            answerList.get(i).setText(questionController.unpackAnswers().get(i));
-//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
-//        }
     }
-//
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Content content = questionController.sendNextContent();
         questionContainer.setText(content.getValue());
 
-//        for(int i = 0; i < content.getAnswer().size(); i++){
-//            System.out.println(content.getAnswer().get(i).getValue());
-//        }
 
         answerList.add(answer1);
         answerList.add(answer2);
@@ -95,7 +82,7 @@ public class QuestionView implements QuestionObserver, Initializable {
 
         for (int i = 0; i < answerList.size(); i++) {
             answerList.get(i).setText(content.getAnswer().get(i).getValue());
-//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
+            answerList.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
         }
     }
 }
