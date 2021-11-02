@@ -7,6 +7,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.stage.Stage;
 import nl.hsleiden.DAO.ResultDAO;
+import nl.hsleiden.model.Content;
 import nl.hsleiden.service.ResultService;
 
 import java.io.IOException;
@@ -15,10 +16,12 @@ public class ResultController {
     private static ResultController resultController;
     private final ResultService resultService;
     private final SceneController sceneController;
+    private final ContentController contentController;
 
     private ResultController() {
         resultService = new ResultService();
         sceneController = SceneController.getInstance();
+        contentController = ContentController.getInstance();
     }
 
     public synchronized static ResultController getInstance() {
@@ -29,11 +32,11 @@ public class ResultController {
     }
 
     public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
-        sceneController.switchToNextScreen(event, fileName);
+        sceneController.switchToNextScreen(fileName);
 
     }
 
-    public void closeGame(){
+    public void closeApplication(){
         try{
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirm Close");
@@ -48,4 +51,8 @@ public class ResultController {
     public void getResults() {
         resultService.getAll();
     }
+
+//    public Content sendContent() {
+//        return contentController.nextContent();
+//    }
 }

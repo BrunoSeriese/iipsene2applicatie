@@ -5,6 +5,8 @@ import nl.hsleiden.service.QuestionService;
 
 import nl.hsleiden.service.HistoryService;
 
+import java.io.IOException;
+
 public class QuestionController {
     private static QuestionController questionController;
     private final QuestionService questionService;
@@ -31,9 +33,8 @@ public class QuestionController {
 
     }
 
-    public Content sendNextContent() {
+    public Content sendNextContent(){
         return contentController.nextContent();
-
     }
 
     public void setNextContentId(int id){

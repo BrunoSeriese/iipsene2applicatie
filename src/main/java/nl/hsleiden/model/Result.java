@@ -1,5 +1,6 @@
 package nl.hsleiden.model;
 
+import javafx.event.ActionEvent;
 import nl.hsleiden.observer.Observer;
 import nl.hsleiden.subject.ResultSubject;
 
@@ -57,5 +58,7 @@ public class Result implements Content, ResultSubject {
     @Override
     public void notifyObservers() {
         observers.forEach(observer -> observer.update(this));
+
     }
+
 }

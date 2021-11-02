@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import nl.hsleiden.controller.ContentController;
+import nl.hsleiden.service.StageService;
 
 import java.io.IOException;
 
@@ -15,6 +16,7 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        StageService.getInstance(stage);
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
 //        stage.setOnCloseRequest(evt -> {

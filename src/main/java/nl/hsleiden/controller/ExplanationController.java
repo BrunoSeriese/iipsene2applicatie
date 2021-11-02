@@ -30,6 +30,6 @@ public class ExplanationController {
     }
 
     public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
-        sceneController.switchToNextScreen(event, fileName);
+        sceneController.switchToNextScreen(fileName);
     }
 }

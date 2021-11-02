@@ -1,5 +1,6 @@
 package nl.hsleiden.view;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -47,7 +48,7 @@ public class QuestionView implements QuestionObserver, Initializable {
     }
 
 
-    public void nextContent() {
+    public void nextContent(ActionEvent event) {
         RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
         if (chosenButton == Button1){
             questionController.setNextContentId(Integer.parseInt(answer1.getId()));

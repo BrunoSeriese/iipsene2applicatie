@@ -3,6 +3,7 @@ package nl.hsleiden.controller;
 import javafx.util.Pair;
 import nl.hsleiden.model.*;
 import nl.hsleiden.service.HistoryService;
+import nl.hsleiden.service.StageService;
 
 import java.util.ArrayList;
 
@@ -57,6 +58,7 @@ public class ContentController {
 
     }
 
+
     public Content nextContent() {
         Content content = getContentById(contentId);
 
@@ -70,7 +72,8 @@ public class ContentController {
 //            sceneController.switchToNextScreen();
         } else if (content instanceof Result) {
             System.out.println("resultaten");
-//            sceneController.switchToNextScreen();
+            sceneController.switchToNextScreen("Result.fxml");
+            return content;
         } else if (content instanceof Explanation) {
             System.out.println("uitleg");
 //            sceneController.switchToNextScreen();
@@ -81,7 +84,6 @@ public class ContentController {
     }
 
     public void nextContentId(int id) {
-        System.out.println("CONTENT ID NEEF: " + contentId);
         this.contentId = id;
     }
 //

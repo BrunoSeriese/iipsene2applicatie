@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import nl.hsleiden.iipsene2applicatie.MainApplication;
+import nl.hsleiden.service.StageService;
 
 import java.io.IOException;
 
@@ -42,11 +43,17 @@ public class SceneController {
         return sceneController;
     }
 
-    public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
-        root = FXMLLoader.load(MainApplication.class.getResource(fileName));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void switchToNextScreen(String fileName){
+        try {
+            root = FXMLLoader.load(MainApplication.class.getResource(fileName));
+            stage = StageService.getInstance().getStage();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+
     }
 }

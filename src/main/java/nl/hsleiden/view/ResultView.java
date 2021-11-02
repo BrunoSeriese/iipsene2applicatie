@@ -2,7 +2,9 @@ package nl.hsleiden.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 import nl.hsleiden.controller.ResultController;
+import nl.hsleiden.model.Content;
 import nl.hsleiden.observer.ResultObserver;
 import nl.hsleiden.subject.ResultSubject;
 
@@ -11,6 +13,9 @@ import java.io.IOException;
 public class ResultView implements ResultObserver {
 
     private final ResultController resultController;
+    public TextArea resultField;
+    private ActionEvent event;
+    String fileName = "Result.fxml";
 
     public ResultView(){
         resultController = ResultController.getInstance();
@@ -22,14 +27,23 @@ public class ResultView implements ResultObserver {
     }
 
     @FXML
-    protected void onExitButtonClick(ActionEvent event){
-        resultController.closeGame();
+    protected void onExitButtonClick(){
+        resultController.closeApplication();
     }
 
+
+//    public void sendContent(){
+//        Content content = resultController.sendContent();
+//        resultField.setText(content.getValue());
+//    }
 
     @Override
-    public void update(ResultSubject state) {
+    public void update(ResultSubject state){
+
+
 
 
     }
+
+
 }
