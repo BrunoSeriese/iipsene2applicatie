@@ -7,6 +7,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
 import nl.hsleiden.controller.QuestionController;
+import nl.hsleiden.model.Content;
 import nl.hsleiden.observer.QuestionObserver;
 import nl.hsleiden.subject.QuestionSubject;
 
@@ -37,13 +38,27 @@ public class QuestionView implements QuestionObserver {
     }
 
     public void previousContent() {
-
+//        questionController.getPreviousContent();
+//
+//        questionContainer.setText(questionController.unpackQuestions());
+//        for (int i = 0; i < 4; i++) {
+//            answerList.get(i).setText(questionController.unpackAnswers().get(i));
+//        }
     }
 
 
     public void nextContent() {
-        questionController.sendNextContent();
-        //        RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
+        Content content = questionController.sendNextContent();
+        questionContainer.setText(content.getValue());
+
+
+
+
+
+
+
+
+//        RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
 //        if (chosenButton == Button1){
 //            questionController.setNextContentId(Integer.parseInt(answer1.getId()));
 //        } else if (chosenButton == Button2){
@@ -53,6 +68,26 @@ public class QuestionView implements QuestionObserver {
 //        }else if (chosenButton == Button4){
 //            questionController.setNextContentId(Integer.parseInt(answer4.getId()));
 //        }
+//
+//        questionContainer.setText(questionController.unpackQuestions());
+//        for (int i = 0; i < 4; i++) {
+//            answerList.get(i).setText(questionController.unpackAnswers().get(i));
+//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
+//        }
     }
-
+//
+//    @Override
+//    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        answerList.add(answer1);
+//        answerList.add(answer2);
+//        answerList.add(answer3);
+//        answerList.add(answer4);
+//
+//        questionContainer.setText(questionController.unpackQuestions());
+//
+//        for (int i = 0; i < answerList.size(); i++) {
+//            answerList.get(i).setText(questionController.unpackAnswers().get(i));
+//            answerList.get(i).setId(String.valueOf(questionController.unpackAnswersId().get(i)));
+//        }
+//    }
 }

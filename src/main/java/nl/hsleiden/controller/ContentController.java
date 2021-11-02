@@ -4,7 +4,6 @@ import javafx.util.Pair;
 import nl.hsleiden.model.*;
 import nl.hsleiden.service.HistoryService;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class ContentController {
@@ -15,7 +14,7 @@ public class ContentController {
     private int contentId = 1;
 
 
-    private ContentController(HistoryService historyService){
+    private ContentController(HistoryService historyService) {
         this.historyService = historyService;
         sceneController = SceneController.getInstance();
 
@@ -34,7 +33,7 @@ public class ContentController {
         ResultController.getInstance().getResults();
     }
 
-    public void addContent(Content content){
+    public void addContent(Content content) {
         contents.add(content);
     }
 
@@ -44,59 +43,51 @@ public class ContentController {
 
     public Content getContentById(int id) {
         for (Content content : contents) {
-            if(content.getId() == id) {
+            if (content.getId() == id) {
                 return content;
             }
         }
         return null;
     }
 
-    public void previousContent(){
+    public void prevousContent() {
         Pair<Content, Answer> historyContent = historyService.getLast();
         int nextContentId = historyContent.getValue().getNextContentId();
         Content content = getContentById(nextContentId);
 
-        if (content instanceof Question) {
-            System.out.println("vraag");
-//            sceneController.switchToNextScreen();
-        } else if (content instanceof Video) {
-            System.out.println("video");
-//            sceneController.switchToNextScreen();
-        } else if (content instanceof Result){
-            System.out.println("resultaten");
-//            sceneController.switchToNextScreen();
-        } else if (content instanceof Explanation){
-            System.out.println("uitleg");
-//            sceneController.switchToNextScreen();
-        }
     }
 
-    public void nextContent() {
+    public Content nextContent() {
         Content content = getContentById(contentId);
+
         if (content instanceof Question) {
             System.out.println("vraag");
 //            sceneController.switchToNextScreen();
+            System.out.println(content.getValue());
+            System.out.println(content.getAnswer());
+            return content;
         } else if (content instanceof Video) {
             System.out.println("video");
 //            sceneController.switchToNextScreen();
-        } else if (content instanceof Result){
+        } else if (content instanceof Result) {
             System.out.println("resultaten");
 //            sceneController.switchToNextScreen();
-        } else if (content instanceof Explanation){
+        } else if (content instanceof Explanation) {
             System.out.println("uitleg");
 //            sceneController.switchToNextScreen();
         }
 
+
+        return content;
     }
 
-    public void nextContentId() {
-        this.contentId += 1;
-    }
-
-    public void previousContentId() {
-        this.contentId -= 1;
-    }
-
+//    public void nextContentId() {
+//        this.contentId += 1;
+//    }
+//
+//    public void previousContentId() {
+//        this.contentId -= 1;
+//    }
 
 
 }
