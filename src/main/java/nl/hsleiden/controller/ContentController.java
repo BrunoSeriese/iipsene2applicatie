@@ -12,7 +12,7 @@ public class ContentController {
     private final HistoryService historyService;
     private final SceneController sceneController;
     private final ArrayList<Content> contents = new ArrayList<>();
-/*    private int contentId = 1;*/
+    private int contentId = 1;
 
 
     private ContentController(HistoryService historyService){
@@ -32,16 +32,6 @@ public class ContentController {
     public void buildDatabase() {
         QuestionController.getInstance().getQuestions();
         ResultController.getInstance().getResults();
-
-        for (Content content : contents) {
-
-            System.out.println(content.getId());
-            System.out.println(content.getValue());
-
-            for (Answer answer: content.getAnswer()) {
-                System.out.println(answer.getValue());
-            }
-        }
     }
 
     public void addContent(Content content){
@@ -61,7 +51,7 @@ public class ContentController {
         return null;
     }
 
-    public void nextContent() {
+    public void previousContent(){
         Pair<Content, Answer> historyContent = historyService.getLast();
         int nextContentId = historyContent.getValue().getNextContentId();
         Content content = getContentById(nextContentId);
@@ -79,15 +69,34 @@ public class ContentController {
             System.out.println("uitleg");
 //            sceneController.switchToNextScreen();
         }
+    }
+
+    public void nextContent() {
+        Content content = getContentById(contentId);
+        if (content instanceof Question) {
+            System.out.println("vraag");
+//            sceneController.switchToNextScreen();
+        } else if (content instanceof Video) {
+            System.out.println("video");
+//            sceneController.switchToNextScreen();
+        } else if (content instanceof Result){
+            System.out.println("resultaten");
+//            sceneController.switchToNextScreen();
+        } else if (content instanceof Explanation){
+            System.out.println("uitleg");
+//            sceneController.switchToNextScreen();
+        }
 
     }
 
-/*    public void nextContentId(){
+    public void nextContentId() {
         this.contentId += 1;
     }
-    public  void previousContentId(){
+
+    public void previousContentId() {
         this.contentId -= 1;
-    }*/
+    }
+
 
 
 }

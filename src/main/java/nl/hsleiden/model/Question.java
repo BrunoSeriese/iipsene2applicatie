@@ -1,7 +1,9 @@
 package nl.hsleiden.model;
 
+import javafx.scene.control.TextArea;
 import nl.hsleiden.observer.Observer;
 import nl.hsleiden.subject.QuestionSubject;
+import org.w3c.dom.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -57,4 +59,5 @@ public class Question implements Content, QuestionSubject, Serializable {
     public void notifyObservers() {
         observers.forEach(observer -> observer.update(this));
     }
+
 }
