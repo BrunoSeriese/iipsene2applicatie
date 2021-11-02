@@ -17,12 +17,12 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        stage.setOnCloseRequest(evt -> {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirm Close");
-            alert.setHeaderText("Close program?");
-            alert.showAndWait().filter(r -> r != ButtonType.OK).ifPresent(r->evt.consume());
-        });
+//        stage.setOnCloseRequest(evt -> {
+//            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+//            alert.setTitle("Confirm Close");
+//            alert.setHeaderText("Close program?");
+//            alert.showAndWait().filter(r -> r != ButtonType.OK).ifPresent(r->evt.consume());
+//        });
         ContentController.getInstance().buildDatabase();
         stage.setTitle("Subsidiewijzer SVDJ");
         stage.setResizable(false);
