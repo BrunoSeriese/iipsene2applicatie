@@ -13,13 +13,14 @@ public class ContentController {
     private static ContentController contentController;
     private final HistoryService historyService;
     private final SceneController sceneController;
-    private final ArrayList<Content> contents = new ArrayList<>();
+    private final ArrayList<Content> ourDatabase = new ArrayList<>();
 /*    private int contentId = 1;*/
 
 
     private ContentController(HistoryService historyService){
         this.historyService = historyService;
         sceneController = SceneController.getInstance();
+
     }
 
 
@@ -30,11 +31,11 @@ public class ContentController {
         return contentController;
     }
 
-    public void buildDatabase() {
+    public void buildDatabase() throws IOException {
         QuestionController.getInstance().getQuestions();
         ResultController.getInstance().getResults();
 
-        for (Content content : contents) {
+        for (Content content : ourDatabase) {
 
             System.out.println(content.getId());
             System.out.println(content.getValue());
@@ -46,15 +47,15 @@ public class ContentController {
     }
 
     public void addContent(Content content){
-        contents.add(content);
+        ourDatabase.add(content);
     }
 
     public void removeContent(Content content) {
-        contents.remove(content);
+        ourDatabase.remove(content);
     }
 
     public Content getContentById(int id) {
-        for (Content content : contents) {
+        for (Content content : ourDatabase) {
             if(content.getId() == id) {
                 return content;
             }
