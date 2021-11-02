@@ -4,9 +4,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.DialogPane;
-import javafx.stage.Stage;
-import nl.hsleiden.DAO.ResultDAO;
 import nl.hsleiden.model.Content;
 import nl.hsleiden.service.ResultService;
 

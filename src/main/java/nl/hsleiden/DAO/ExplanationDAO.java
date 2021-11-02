@@ -1,10 +1,7 @@
 package nl.hsleiden.DAO;
 
-import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.model.Answer;
 import nl.hsleiden.model.Explanation;
-import nl.hsleiden.model.Question;
-import nl.hsleiden.model.Video;
 import nl.hsleiden.service.AnswerService;
 import nl.hsleiden.service.ApiService;
 import nl.hsleiden.service.ExplanationService;

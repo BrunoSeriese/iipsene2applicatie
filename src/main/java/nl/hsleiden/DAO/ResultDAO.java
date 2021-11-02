@@ -1,6 +1,5 @@
 package nl.hsleiden.DAO;
 
-import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.model.Answer;
 import nl.hsleiden.model.Result;
 import nl.hsleiden.service.AnswerService;
@@ -11,7 +10,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;

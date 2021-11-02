@@ -1,14 +1,11 @@
 package nl.hsleiden.DAO;
-import nl.hsleiden.controller.QuestionController;
+
 import nl.hsleiden.service.ApiService;
-import nl.hsleiden.service.QuestionService;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.*;
-
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 

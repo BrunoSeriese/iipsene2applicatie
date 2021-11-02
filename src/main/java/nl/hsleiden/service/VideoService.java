@@ -1,9 +1,7 @@
 package nl.hsleiden.service;
 
-import nl.hsleiden.DAO.ResultDAO;
 import nl.hsleiden.DAO.VideoDAO;
 import nl.hsleiden.controller.ContentController;
-import nl.hsleiden.model.Result;
 import nl.hsleiden.model.Video;
 import org.json.JSONObject;
 

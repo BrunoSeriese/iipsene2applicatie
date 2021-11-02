@@ -1,6 +1,5 @@
 package nl.hsleiden.model;
 
-import javafx.event.ActionEvent;
 import nl.hsleiden.observer.Observer;
 import nl.hsleiden.subject.ResultSubject;
 

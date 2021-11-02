@@ -1,9 +1,7 @@
 package nl.hsleiden.service;
 
-import nl.hsleiden.DAO.QuestionDAO;
 import nl.hsleiden.DAO.ResultDAO;
 import nl.hsleiden.controller.ContentController;
-import nl.hsleiden.model.Question;
 import nl.hsleiden.model.Result;
 import org.json.JSONObject;
 

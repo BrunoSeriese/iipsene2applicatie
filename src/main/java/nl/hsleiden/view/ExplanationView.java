@@ -2,7 +2,6 @@ package nl.hsleiden.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import nl.hsleiden.controller.ExplanationController;
 import nl.hsleiden.observer.ExplanationObserver;
 import nl.hsleiden.subject.ExplanationSubject;
