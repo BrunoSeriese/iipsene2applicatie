@@ -58,11 +58,11 @@ public class ContentController {
         Pair<Content, Answer> historyContent = historyService.getLast();
         int nextContentId = historyContent.getValue().getNextContentId();
         Content content = getContentById(nextContentId);
-
     }
 
 
     public Content nextContent() {
+
         Content content = getContentById(contentId);
         int test = 0;
 

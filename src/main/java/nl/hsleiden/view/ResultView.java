@@ -15,7 +15,6 @@ public class ResultView implements ResultObserver {
 
     private final ResultController resultController;
     public TextArea resultField;
-    String fileName = "Result.fxml";
     public Button resultButton;
 
     public ResultView() {
