@@ -12,6 +12,7 @@ public class ContentController {
     private final SceneController sceneController;
     private final ArrayList<Content> contents = new ArrayList<>();
     private int contentId = 1;
+    private int lastContentId = 1;
 
 
     private ContentController(HistoryService historyService) {
@@ -89,12 +90,38 @@ public class ContentController {
     }
 
     public void nextContentId(int id) {
+        System.out.println(contentId);
+        System.out.println(lastContentId);
+
         this.contentId = id;
+        System.out.println(lastContentId);
     }
-//
-//    public void previousContentId() {
-//        this.contentId -= 1;
-//    }
+
+    public Content previousContent() {
+        System.out.println(lastContentId);
+        this.contentId = lastContentId;
+        System.out.println(contentId);
+
+        Content oldContent = getContentById(contentId);
+
+        if (oldContent instanceof Question) {
+            System.out.println("vraag");
+            nextContentId(contentId);
+            return oldContent;
+        } else if (oldContent instanceof Video) {
+            System.out.println("video");
+        } else if (oldContent instanceof Result) {
+            System.out.println("resultaten");
+            sceneController.switchToNextScreen("Result.fxml");
+
+            return oldContent;
+        } else if (oldContent instanceof Explanation) {
+            System.out.println("uitleg");
+        }
+
+
+        return oldContent;
+    }
 
 
 }

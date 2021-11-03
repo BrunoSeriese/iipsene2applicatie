@@ -24,12 +24,14 @@ public class QuestionController {
         return questionController;
     }
 
-    public void getPreviousContent(){
-        //TODO spreek met de historyService en haal de vorige content op
+    public  Content previousContent(){
+        return contentController.previousContent();
 
 
     }
+    public void setPreviousContent(int id){
 
+    }
     public Content sendNextContent(){
         return contentController.nextContent();
     }

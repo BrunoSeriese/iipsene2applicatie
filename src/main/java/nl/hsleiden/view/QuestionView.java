@@ -37,13 +37,14 @@ public class QuestionView implements QuestionObserver, Initializable {
 
     }
 
-    public void previousContent() {
-//        questionController.getPreviousContent();
-//
-//        questionContainer.setText(questionController.unpackQuestions());
-//        for (int i = 0; i < 4; i++) {
-//            answerList.get(i).setText(questionController.unpackAnswers().get(i));
-//        }
+    public void previousContent(ActionEvent event) {
+        Content content = questionController.previousContent();
+        questionContainer.setText(content.getValue());
+
+        for (int i = 0; i < answerList.size(); i++) {
+            answerList.get(i).setText(content.getAnswer().get(i).getValue());
+            answerList.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
+        }
     }
 
 
