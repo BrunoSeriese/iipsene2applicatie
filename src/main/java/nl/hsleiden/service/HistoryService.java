@@ -40,4 +40,6 @@ public class HistoryService {
     public Pair<Content, Answer> getLast() {
         return history.get(history.size() - 1);
     }
+
+
 }
