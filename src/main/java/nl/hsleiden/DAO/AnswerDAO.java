@@ -2,7 +2,6 @@ package nl.hsleiden.DAO;
 
 import nl.hsleiden.model.Answer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AnswerDAO implements DAO<Answer> {

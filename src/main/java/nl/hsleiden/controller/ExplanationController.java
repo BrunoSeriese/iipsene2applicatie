@@ -1,7 +1,6 @@
 package nl.hsleiden.controller;
 
 import javafx.event.ActionEvent;
-import nl.hsleiden.DAO.ExplanationDAO;
 import nl.hsleiden.service.ExplanationService;
 
 import java.io.IOException;

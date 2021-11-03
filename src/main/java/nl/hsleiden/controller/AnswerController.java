@@ -1,6 +1,5 @@
 package nl.hsleiden.controller;
 
-import nl.hsleiden.DAO.AnswerDAO;
 import nl.hsleiden.service.AnswerService;
 
 public class AnswerController {

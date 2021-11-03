@@ -1,7 +1,6 @@
 package nl.hsleiden.controller;
 
 import javafx.scene.web.WebView;
-import nl.hsleiden.DAO.VideoDAO;
 import nl.hsleiden.service.VideoService;
 
 public class VideoController {

@@ -3,7 +3,6 @@ package nl.hsleiden.controller;
 import javafx.util.Pair;
 import nl.hsleiden.model.*;
 import nl.hsleiden.service.HistoryService;
-import nl.hsleiden.service.StageService;
 
 import java.util.ArrayList;
 
@@ -49,6 +48,10 @@ public class ContentController {
             }
         }
         return null;
+    }
+
+    public int getId(){
+        return contentId;
     }
 
     public void prevousContent() {

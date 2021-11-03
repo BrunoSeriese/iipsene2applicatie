@@ -1,11 +1,8 @@
 package nl.hsleiden.controller;
 
 import nl.hsleiden.model.Content;
-import nl.hsleiden.service.QuestionService;
-
 import nl.hsleiden.service.HistoryService;
-
-import java.io.IOException;
+import nl.hsleiden.service.QuestionService;
 
 public class QuestionController {
     private static QuestionController questionController;

@@ -6,8 +6,6 @@ import nl.hsleiden.model.Content;
 import nl.hsleiden.model.Question;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class HistoryService {
     private final ArrayList<Pair<Content, Answer>> history = new ArrayList<>();

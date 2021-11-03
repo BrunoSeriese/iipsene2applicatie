@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.text.Text;
 import nl.hsleiden.controller.ResultController;
 import nl.hsleiden.model.Content;
 import nl.hsleiden.observer.ResultObserver;
@@ -15,38 +14,33 @@ import java.io.IOException;
 public class ResultView implements ResultObserver {
 
     private final ResultController resultController;
-    @FXML
-    private TextArea resultField;
-    public Text adviesResultaat;
-    public Button videoBtn;
-    public Button afsluitBtn;
-    public TextArea textAreaVerzonnen;
-    private ActionEvent event;
+    public TextArea resultField;
     String fileName = "Result.fxml";
+    public Button resultButton;
 
-    public ResultView(){
+    public ResultView() {
         resultController = ResultController.getInstance();
+
     }
 
     @FXML
-    protected void onVideoButtonClick() throws IOException {
-        resultController.switchToNextScreen("Video.fxml");
+    protected void onVideoButtonClick(ActionEvent event) throws IOException {
+        resultController.switchToNextScreen(event, "Video.fxml");
     }
 
     @FXML
-    protected void onExitButtonClick(){
+    protected void onExitButtonClick() {
         resultController.closeApplication();
     }
 
-
-    public void sendContent(){
-        resultController.sendContent();
-        resultField.setText("hoi");
+    @FXML
+    public void sendContent() {
+        Content content = resultController.sendContent();
+        resultField.setText(content.getValue());
     }
 
-
     @Override
-    public void update(ResultSubject state){
+    public void update(ResultSubject state) {
 
 
     }
