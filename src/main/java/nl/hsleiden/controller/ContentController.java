@@ -90,11 +90,14 @@ public class ContentController {
 
     public void nextContentId(int id) {
         System.out.println(contentId);
-        this.lastContentId = contentId;
+        System.out.println(lastContentId);
+
         this.contentId = id;
+        System.out.println(lastContentId);
     }
 
     public Content previousContent() {
+        System.out.println(lastContentId);
         this.contentId = lastContentId;
         System.out.println(contentId);
 
