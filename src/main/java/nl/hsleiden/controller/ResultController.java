@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextArea;
 import nl.hsleiden.model.Content;
 import nl.hsleiden.service.ResultService;
 
@@ -51,5 +52,9 @@ public class ResultController {
 
     public Content sendContent() {
         return contentController.getContentById(contentController.getId());
+    }
+
+    public void showResultOnScreen(TextArea textArea, String text){
+        textArea.setText(text);
     }
 }

@@ -59,17 +59,18 @@ public class ContentController {
         Pair<Content, Answer> historyContent = historyService.getLast();
         int nextContentId = historyContent.getValue().getNextContentId();
         Content content = getContentById(nextContentId);
-
     }
 
 
     public Content nextContent() {
         Content content = getContentById(contentId);
+        int test = 0;
 
         if (content instanceof Question) {
             System.out.println("vraag");
 //            sceneController.switchToNextScreen();
-            //nextContentId(contentId);
+
+            nextContentId(contentId);
             return content;
         } else if (content instanceof Video) {
             System.out.println("video");
@@ -91,8 +92,16 @@ public class ContentController {
     public void nextContentId(int id) {
         System.out.println(contentId);
         System.out.println(lastContentId);
-        lastContentId = contentId;
+
         this.contentId = id;
+        System.out.println(lastContentId);
+    }
+
+    public void lastContentId(int id) {
+        System.out.println(contentId);
+        System.out.println(lastContentId);
+
+        this.lastContentId = id;
         System.out.println(lastContentId);
     }
 
