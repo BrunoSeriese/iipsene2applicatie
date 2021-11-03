@@ -2,7 +2,9 @@ package nl.hsleiden.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
 import nl.hsleiden.controller.ResultController;
 import nl.hsleiden.model.Content;
 import nl.hsleiden.observer.ResultObserver;
@@ -13,7 +15,12 @@ import java.io.IOException;
 public class ResultView implements ResultObserver {
 
     private final ResultController resultController;
-    public TextArea resultField;
+    @FXML
+    private TextArea resultField;
+    public Text adviesResultaat;
+    public Button videoBtn;
+    public Button afsluitBtn;
+    public TextArea textAreaVerzonnen;
     private ActionEvent event;
     String fileName = "Result.fxml";
 
@@ -22,8 +29,8 @@ public class ResultView implements ResultObserver {
     }
 
     @FXML
-    protected void onVideoButtonClick(ActionEvent event) throws IOException {
-        resultController.switchToNextScreen(event,"Video.fxml");
+    protected void onVideoButtonClick() throws IOException {
+        resultController.switchToNextScreen("Video.fxml");
     }
 
     @FXML
@@ -32,15 +39,14 @@ public class ResultView implements ResultObserver {
     }
 
 
-//    public void sendContent(){
-//        Content content = resultController.sendContent();
-//        resultField.setText(content.getValue());
-//    }
+    public void sendContent(){
+        resultController.sendContent();
+        resultField.setText("hoi");
+    }
+
 
     @Override
     public void update(ResultSubject state){
-
-
 
 
     }

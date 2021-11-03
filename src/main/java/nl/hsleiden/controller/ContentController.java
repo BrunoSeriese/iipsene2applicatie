@@ -61,6 +61,7 @@ public class ContentController {
 
     public Content nextContent() {
         Content content = getContentById(contentId);
+        int test = 0;
 
         if (content instanceof Question) {
             System.out.println("vraag");
@@ -73,6 +74,7 @@ public class ContentController {
         } else if (content instanceof Result) {
             System.out.println("resultaten");
             sceneController.switchToNextScreen("Result.fxml");
+
             return content;
         } else if (content instanceof Explanation) {
             System.out.println("uitleg");
