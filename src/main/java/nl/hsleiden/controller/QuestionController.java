@@ -30,6 +30,7 @@ public class QuestionController {
 
     }
     public void setPreviousContent(int id){
+        contentController.lastContentId(id);
 
     }
     public Content sendNextContent(){

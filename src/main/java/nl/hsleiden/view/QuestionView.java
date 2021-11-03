@@ -48,7 +48,7 @@ public class QuestionView implements QuestionObserver, Initializable {
     }
 
 
-    public void nextContent(ActionEvent event) {
+    public void nextContent() {
         RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
         if (chosenButton == Button1){
             questionController.setNextContentId(Integer.parseInt(answer1.getId()));

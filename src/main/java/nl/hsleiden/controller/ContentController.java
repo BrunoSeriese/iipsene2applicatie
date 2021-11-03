@@ -63,13 +63,13 @@ public class ContentController {
 
 
     public Content nextContent() {
-
         Content content = getContentById(contentId);
         int test = 0;
 
         if (content instanceof Question) {
             System.out.println("vraag");
 //            sceneController.switchToNextScreen();
+
             nextContentId(contentId);
             return content;
         } else if (content instanceof Video) {
@@ -94,6 +94,14 @@ public class ContentController {
         System.out.println(lastContentId);
 
         this.contentId = id;
+        System.out.println(lastContentId);
+    }
+
+    public void lastContentId(int id) {
+        System.out.println(contentId);
+        System.out.println(lastContentId);
+
+        this.lastContentId = id;
         System.out.println(lastContentId);
     }
 

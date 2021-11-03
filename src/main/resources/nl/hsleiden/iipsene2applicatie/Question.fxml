@@ -74,7 +74,7 @@
             </HBox>
          </children>
       </VBox>
-      <RadioButton fx:id="Button1" layoutX="127.0" layoutY="280.0" mnemonicParsing="false" text="test">
+      <RadioButton fx:id="Button1" layoutX="127.0" layoutY="280.0" mnemonicParsing="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

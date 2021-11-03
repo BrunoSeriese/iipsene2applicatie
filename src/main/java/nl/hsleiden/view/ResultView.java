@@ -2,6 +2,7 @@ package nl.hsleiden.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import nl.hsleiden.controller.ResultController;
@@ -10,8 +11,11 @@ import nl.hsleiden.observer.ResultObserver;
 import nl.hsleiden.subject.ResultSubject;
 
 import java.io.IOException;
+import java.lang.annotation.Inherited;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ResultView implements ResultObserver {
+public class ResultView implements ResultObserver, Initializable {
 
     private final ResultController resultController;
     public TextArea resultField;
@@ -45,4 +49,8 @@ public class ResultView implements ResultObserver {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        sendContent();
+    }
 }
