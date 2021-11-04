@@ -5,12 +5,14 @@ module nl.hsleiden.iipsene2applicatie {
     requires javafx.web;
     requires org.apache.commons.io;
     requires json;
+    requires com.google.gson;
 
     exports nl.hsleiden.iipsene2applicatie;
     exports nl.hsleiden.controller;
     exports nl.hsleiden.view;
     exports nl.hsleiden.model;
 
+    opens nl.hsleiden.model to com.google.gson;
     opens nl.hsleiden.iipsene2applicatie to javafx.fxml;
     opens nl.hsleiden.view to javafx.fxml;
     opens nl.hsleiden.controller to javafx.fxml;
