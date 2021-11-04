@@ -2,6 +2,7 @@ package nl.hsleiden.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.controller.ExplanationController;
 import nl.hsleiden.observer.ExplanationObserver;
 import nl.hsleiden.subject.ExplanationSubject;
@@ -23,7 +24,7 @@ public class ExplanationView implements ExplanationObserver {
     }
 
     public void nextContent() {
-        System.out.println("next content is coming!");
+
 
     }
 

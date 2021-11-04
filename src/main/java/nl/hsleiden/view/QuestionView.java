@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
+import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.controller.QuestionController;
 import nl.hsleiden.model.Content;
 import nl.hsleiden.observer.QuestionObserver;
@@ -60,19 +61,21 @@ public class QuestionView implements QuestionObserver, Initializable {
             questionController.setNextContentId(Integer.parseInt(answer4.getId()));
         }
 
-        Content content = questionController.sendNextContent();
+        questionController.sendNextContent();
+        /*Content content = ContentController.getInstance().getContent();
         questionContainer.setText(content.getValue());
 
         for (int i = 0; i < answerList.size(); i++) {
             answerList.get(i).setText(content.getAnswer().get(i).getValue());
             answerList.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
-        }
+        }*/
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Content content = questionController.sendNextContent();
+        //questionController.sendNextContent();
+        Content content = ContentController.getInstance().getContent();
         questionContainer.setText(content.getValue());
 
 

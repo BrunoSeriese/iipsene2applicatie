@@ -62,31 +62,21 @@ public class ContentController {
     }
 
 
-    public Content nextContent() {
+    public void nextContent() {
         Content content = getContentById(contentId);
-        int test = 0;
+        String filename = "";
 
         if (content instanceof Question) {
-            System.out.println("vraag");
-//            sceneController.switchToNextScreen();
-
-            nextContentId(contentId);
-            return content;
+            filename = "Question.fxml";
         } else if (content instanceof Video) {
-            System.out.println("video");
-//            sceneController.switchToNextScreen();
+            filename = "Video.fxml";
         } else if (content instanceof Result) {
-            System.out.println("resultaten");
-            sceneController.switchToNextScreen("Result.fxml");
-
-            return content;
+            filename = "Result.fxml";
         } else if (content instanceof Explanation) {
-            System.out.println("uitleg");
-//            sceneController.switchToNextScreen();
+            filename = "Explanation.fxml";
         }
 
-
-        return content;
+        sceneController.switchToNextScreen(filename);
     }
 
     public void nextContentId(int id) {
@@ -131,5 +121,7 @@ public class ContentController {
         return oldContent;
     }
 
-
+    public Content getContent() {
+        return getContentById(contentId);
+    }
 }

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.controller.ResultController;
 import nl.hsleiden.model.Content;
 import nl.hsleiden.observer.ResultObserver;
@@ -38,7 +39,7 @@ public class ResultView implements ResultObserver, Initializable {
 
     @FXML
     public void sendContent() {
-        Content content = resultController.sendContent();
+        Content content = ContentController.getInstance().getContent();
         resultField.setText(content.getValue());
     }
 

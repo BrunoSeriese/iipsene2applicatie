@@ -1,6 +1,7 @@
 package nl.hsleiden.controller;
 
 import nl.hsleiden.model.Content;
+import nl.hsleiden.model.Question;
 import nl.hsleiden.service.HistoryService;
 import nl.hsleiden.service.QuestionService;
 
@@ -33,8 +34,8 @@ public class QuestionController {
         contentController.lastContentId(id);
 
     }
-    public Content sendNextContent(){
-        return contentController.nextContent();
+    public void sendNextContent(){
+        contentController.nextContent();
     }
 
     public void setNextContentId(int id){

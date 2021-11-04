@@ -29,7 +29,7 @@ public class ResultController {
         return resultController;
     }
 
-    public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
+    public void switchToNextScreen(ActionEvent event, String fileName) {
         sceneController.switchToNextScreen(fileName);
 
     }
@@ -50,8 +50,8 @@ public class ResultController {
         resultService.getAll();
     }
 
-    public Content sendContent() {
-        return contentController.getContentById(contentController.getId());
+    public void sendContent() {
+        contentController.getContentById(contentController.getId());
     }
 
     public void showResultOnScreen(TextArea textArea, String text){
