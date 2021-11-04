@@ -28,7 +28,7 @@ public class ExplanationController {
         contentController.nextContent();
     }
 
-    public void switchToNextScreen(ActionEvent event, String fileName) {
+    public void switchToNextScreen(String fileName) {
         sceneController.switchToNextScreen(fileName);
     }
 }

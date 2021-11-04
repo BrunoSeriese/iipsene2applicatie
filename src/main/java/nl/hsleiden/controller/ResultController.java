@@ -1,14 +1,10 @@
 package nl.hsleiden.controller;
 
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
-import nl.hsleiden.model.Content;
 import nl.hsleiden.service.ResultService;
-
-import java.io.IOException;
 
 public class ResultController {
     private static ResultController resultController;
@@ -29,9 +25,8 @@ public class ResultController {
         return resultController;
     }
 
-    public void switchToNextScreen(ActionEvent event, String fileName) {
+    public void switchToNextScreen(String fileName) {
         sceneController.switchToNextScreen(fileName);
-
     }
 
     public void closeApplication(){
