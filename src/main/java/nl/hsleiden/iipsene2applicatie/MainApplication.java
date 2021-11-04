@@ -11,24 +11,25 @@ import java.io.IOException;
 
 public class MainApplication extends Application {
 
-
     @Override
     public void start(Stage stage) throws IOException {
-        StageService.getInstance(stage);
+        ContentController.getInstance().buildDatabase();
+
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Main.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-//        stage.setOnCloseRequest(evt -> {
-//            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-//            alert.setTitle("Confirm Close");
-//            alert.setHeaderText("Close program?");
-//            alert.showAndWait().filter(r -> r != ButtonType.OK).ifPresent(r->evt.consume());
-//        });
-        ContentController.getInstance().buildDatabase();
+
+        stage = setupStage(stage);
         stage.setTitle("Subsidiewijzer SVDJ");
         stage.setResizable(false);
         stage.setFullScreen(false);
         stage.setScene(scene);
         stage.show();
+    }
+
+    private Stage setupStage(Stage stage) {
+        stage = StageService.getInstance().setCloseRequest(stage);
+        StageService.getInstance().setStage(stage);
+        return stage;
     }
 
     public static void main(String[] args) {
