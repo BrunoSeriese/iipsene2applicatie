@@ -55,20 +55,4 @@ public class QuestionDAO implements DAO<Question> {
     public Question get(Long id) {
         return null;
     }
-
-    @Override
-    public Question create(Question question) {
-        return null;
-    }
-
-    @Override
-    public Question update(Long id) {
-        return null;
-    }
-
-    @Override
-    public void delete(Question question) {
-
-    }
-
 }
