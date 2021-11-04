@@ -1,30 +1,27 @@
 package nl.hsleiden.controller;
 
-import javafx.util.Pair;
-import nl.hsleiden.model.*;
-import nl.hsleiden.service.HistoryService;
+import nl.hsleiden.model.Content;
+import nl.hsleiden.service.ContentService;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContentController {
     private static ContentController contentController;
-    private final HistoryService historyService;
+    private final ContentService contentService;
     private final SceneController sceneController;
-    private final ArrayList<Content> contents = new ArrayList<>();
+    private final List<Content> contents = new ArrayList<>();
     private int contentId = 1;
     private int lastContentId = 1;
 
-
-    private ContentController(HistoryService historyService) {
-        this.historyService = historyService;
+    private ContentController() {
+        contentService = new ContentService();
         sceneController = SceneController.getInstance();
-
     }
-
 
     public synchronized static ContentController getInstance() {
         if (contentController == null) {
-            contentController = new ContentController(new HistoryService());
+            contentController = new ContentController();
         }
         return contentController;
     }
@@ -42,6 +39,35 @@ public class ContentController {
         contents.remove(content);
     }
 
+    public int getId(){
+        return contentId;
+    }
+
+    public void nextContent() {
+        Content content = getContentById(contentId);
+        String filename = contentService.getFilename(content);
+        sceneController.switchToNextScreen(filename);
+    }
+
+    public void previousContent() {
+        this.contentId = lastContentId;
+        Content content = getContent();
+        String filename = contentService.getFilename(content);
+        sceneController.switchToNextScreen(filename);
+    }
+
+    public void nextContentId(int id) {
+        this.contentId = id;
+    }
+
+    public void lastContentId(int id) {
+        this.lastContentId = id;
+    }
+
+    public Content getContent() {
+        return getContentById(contentId);
+    }
+
     public Content getContentById(int id) {
         for (Content content : contents) {
             if (content.getId() == id) {
@@ -50,77 +76,4 @@ public class ContentController {
         }
         return null;
     }
-
-    public int getId(){
-        return contentId;
-    }
-
-    public void prevousContent() {
-        Pair<Content, Answer> historyContent = historyService.getLast();
-        int nextContentId = historyContent.getValue().getNextContentId();
-        Content content = getContentById(nextContentId);
-
-    }
-
-
-    public Content nextContent() {
-        Content content = getContentById(contentId);
-
-        if (content instanceof Question) {
-            System.out.println("vraag");
-//            sceneController.switchToNextScreen();
-            //nextContentId(contentId);
-            return content;
-        } else if (content instanceof Video) {
-            System.out.println("video");
-//            sceneController.switchToNextScreen();
-        } else if (content instanceof Result) {
-            System.out.println("resultaten");
-            sceneController.switchToNextScreen("Result.fxml");
-
-            return content;
-        } else if (content instanceof Explanation) {
-            System.out.println("uitleg");
-//            sceneController.switchToNextScreen();
-        }
-
-
-        return content;
-    }
-
-    public void nextContentId(int id) {
-        System.out.println(contentId);
-        System.out.println(lastContentId);
-        lastContentId = contentId;
-        this.contentId = id;
-        System.out.println(lastContentId);
-    }
-
-    public Content previousContent() {
-        System.out.println(lastContentId);
-        this.contentId = lastContentId;
-        System.out.println(contentId);
-
-        Content oldContent = getContentById(contentId);
-
-        if (oldContent instanceof Question) {
-            System.out.println("vraag");
-            nextContentId(contentId);
-            return oldContent;
-        } else if (oldContent instanceof Video) {
-            System.out.println("video");
-        } else if (oldContent instanceof Result) {
-            System.out.println("resultaten");
-            sceneController.switchToNextScreen("Result.fxml");
-
-            return oldContent;
-        } else if (oldContent instanceof Explanation) {
-            System.out.println("uitleg");
-        }
-
-
-        return oldContent;
-    }
-
-
 }

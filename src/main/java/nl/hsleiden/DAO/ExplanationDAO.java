@@ -25,7 +25,6 @@ public class ExplanationDAO implements DAO<Explanation> {
         this.explanationService = explanationService;
     }
 
-
     @Override
     public List<Explanation> getAll() {
         List<Explanation> explanations = new ArrayList<>();
@@ -51,20 +50,5 @@ public class ExplanationDAO implements DAO<Explanation> {
     @Override
     public Explanation get(Long id) {
         return null;
-    }
-
-    @Override
-    public Explanation create(Explanation explanation) {
-        return null;
-    }
-
-    @Override
-    public Explanation update(Long id) {
-        return null;
-    }
-
-    @Override
-    public void delete(Explanation explanation) {
-
     }
 }

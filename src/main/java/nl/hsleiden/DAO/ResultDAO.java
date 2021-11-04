@@ -51,19 +51,4 @@ public class ResultDAO implements DAO<Result> {
     public Result get(Long id) {
         return null;
     }
-
-    @Override
-    public Result create(Result result) {
-        return null;
-    }
-
-    @Override
-    public Result update(Long id) {
-        return null;
-    }
-
-    @Override
-    public void delete(Result result) {
-
-    }
 }

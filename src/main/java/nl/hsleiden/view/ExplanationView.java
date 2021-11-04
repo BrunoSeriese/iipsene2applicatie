@@ -2,13 +2,13 @@ package nl.hsleiden.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import nl.hsleiden.controller.ExplanationController;
-import nl.hsleiden.observer.ExplanationObserver;
-import nl.hsleiden.subject.ExplanationSubject;
 
-import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ExplanationView implements ExplanationObserver {
+public class ExplanationView implements Initializable {
 
     private final ExplanationController explanationController;
 
@@ -18,17 +18,17 @@ public class ExplanationView implements ExplanationObserver {
     }
 
     @Override
-    public void update(ExplanationSubject state) {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 
     public void nextContent() {
-        System.out.println("next content is coming!");
+
 
     }
 
     @FXML
-    protected void onNextButtonClick(ActionEvent event) throws IOException {
-        explanationController.switchToNextScreen(event,"Question.fxml");
+    protected void onNextButtonClick(ActionEvent actionEvent) {
+        explanationController.switchToNextScreen("Question.fxml");
     }
 }
