@@ -1,21 +1,17 @@
 package nl.hsleiden.view;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.controller.ResultController;
 import nl.hsleiden.model.Content;
-import nl.hsleiden.observer.ResultObserver;
-import nl.hsleiden.subject.ResultSubject;
 
-import java.io.IOException;
-import java.lang.annotation.Inherited;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ResultView implements ResultObserver, Initializable {
+public class ResultView implements Initializable {
 
     private final ResultController resultController;
     public TextArea resultField;
@@ -26,9 +22,14 @@ public class ResultView implements ResultObserver, Initializable {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        sendContent();
+    }
+
     @FXML
-    protected void onVideoButtonClick(ActionEvent event) throws IOException {
-        resultController.switchToNextScreen(event, "Video.fxml");
+    protected void onVideoButtonClick() {
+        resultController.switchToNextScreen("Video.fxml");
     }
 
     @FXML
@@ -38,19 +39,7 @@ public class ResultView implements ResultObserver, Initializable {
 
     @FXML
     public void sendContent() {
-        Content content = resultController.sendContent();
+        Content content = ContentController.getInstance().getContent();
         resultField.setText(content.getValue());
-    }
-
-    @Override
-    public void update(ResultSubject state) {
-
-
-    }
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        sendContent();
     }
 }
