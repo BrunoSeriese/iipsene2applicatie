@@ -1,11 +1,9 @@
 package nl.hsleiden.view;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import nl.hsleiden.controller.ContentController;
-import nl.hsleiden.controller.ExplanationController;
 import nl.hsleiden.model.Content;
 import nl.hsleiden.model.Explanation;
 
@@ -14,13 +12,10 @@ import java.util.ResourceBundle;
 
 public class ExplanationView implements Initializable {
 
-    private final ExplanationController explanationController;
-
     @FXML
     public TextArea explanationText;
 
     public ExplanationView() {
-        explanationController = ExplanationController.getInstance();
     }
 
     @Override
