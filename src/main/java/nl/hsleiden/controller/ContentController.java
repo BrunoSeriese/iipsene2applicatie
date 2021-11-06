@@ -65,11 +65,11 @@ public class ContentController {
 
     public Content nextContent() {
         Content content = getContentById(contentId);
-
         if (content instanceof Question) {
             System.out.println("vraag");
 //            sceneController.switchToNextScreen();
             nextContentId(contentId);
+
             return content;
         } else if (content instanceof Video) {
             System.out.println("video");
