@@ -35,6 +35,7 @@ public class QuestionView implements Initializable {
         questionContainer.setText(content.getValue());
 
         for (int i = 0; i < content.getAnswer().size(); i++) {
+            RadioButtons.get(i).setVisible(true);
             Answers.get(i).setText(content.getAnswer().get(i).getValue());
             Answers.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
         }
@@ -56,6 +57,7 @@ public class QuestionView implements Initializable {
         questionContainer.setText(content.getValue());
 
         for (int i = 0; i < content.getAnswer().size(); i++) {
+            RadioButtons.get(i).setVisible(true);
             Answers.get(i).setText(content.getAnswer().get(i).getValue());
             Answers.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
         }

@@ -75,7 +75,7 @@
             </HBox>
          </children>
       </VBox>
-      <RadioButton fx:id="Button1" layoutX="127.0" layoutY="280.0" mnemonicParsing="false">
+      <RadioButton fx:id="Button1" layoutX="127.0" layoutY="280.0" mnemonicParsing="false" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -83,17 +83,17 @@
             <ToggleGroup fx:id="group" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="Button2" layoutX="127.0" layoutY="355.0" mnemonicParsing="false" toggleGroup="$group">
+      <RadioButton fx:id="Button2" layoutX="127.0" layoutY="355.0" mnemonicParsing="false" toggleGroup="$group" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </RadioButton>
-      <RadioButton fx:id="Button3" layoutX="127.0" layoutY="430.0" mnemonicParsing="false" toggleGroup="$group">
+      <RadioButton fx:id="Button3" layoutX="127.0" layoutY="430.0" mnemonicParsing="false" toggleGroup="$group" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </RadioButton>
-      <RadioButton fx:id="Button4" layoutX="127.0" layoutY="505.0" mnemonicParsing="false" toggleGroup="$group">
+      <RadioButton fx:id="Button4" layoutX="127.0" layoutY="505.0" mnemonicParsing="false" toggleGroup="$group" visible="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
