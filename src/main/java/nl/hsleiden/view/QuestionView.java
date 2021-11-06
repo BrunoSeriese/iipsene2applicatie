@@ -34,7 +34,7 @@ public class QuestionView implements Initializable {
         Content content = ContentController.getInstance().getContent();
         questionContainer.setText(content.getValue());
 
-        for (int i = 0; i < Answers.size(); i++) {
+        for (int i = 0; i < content.getAnswer().size(); i++) {
             Answers.get(i).setText(content.getAnswer().get(i).getValue());
             Answers.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
         }
@@ -55,7 +55,7 @@ public class QuestionView implements Initializable {
         Content content = ContentController.getInstance().getContent();
         questionContainer.setText(content.getValue());
 
-        for (int i = 0; i < Answers.size(); i++) {
+        for (int i = 0; i < content.getAnswer().size(); i++) {
             Answers.get(i).setText(content.getAnswer().get(i).getValue());
             Answers.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
         }
