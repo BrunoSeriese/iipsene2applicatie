@@ -31,6 +31,10 @@ public class QuestionView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        retrieveContent();
+    }
+
+    private void retrieveContent() {
         Content content = ContentController.getInstance().getContent();
         questionContainer.setText(content.getValue());
 
@@ -40,7 +44,7 @@ public class QuestionView implements Initializable {
             Answers.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
         }
     }
-    
+
     public void nextContent() {
         RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
         for (int i = 0; i < RadioButtons.size(); i++) {
@@ -53,14 +57,7 @@ public class QuestionView implements Initializable {
 
     public void previousContent() {
         questionController.previousContent();
-        Content content = ContentController.getInstance().getContent();
-        questionContainer.setText(content.getValue());
-
-        for (int i = 0; i < content.getAnswer().size(); i++) {
-            RadioButtons.get(i).setVisible(true);
-            Answers.get(i).setText(content.getAnswer().get(i).getValue());
-            Answers.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
-        }
+        retrieveContent();
     }
 
 }
