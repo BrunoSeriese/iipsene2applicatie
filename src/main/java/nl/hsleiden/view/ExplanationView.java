@@ -41,7 +41,7 @@ public class ExplanationView implements Initializable {
     public void onNextButtonClick() {
         Content content = ContentController.getInstance().getContent();
         int nextContentId = content.getAnswer().get(0).getNextContentId();
-        if(nextContentId == 0) {
+        if(nextContentId == 0 || !(content instanceof Explanation)) {
             nextContentId = 1;
         }
         ContentController.getInstance().nextContentId(nextContentId);
