@@ -3,14 +3,19 @@ package nl.hsleiden.controller;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextArea;
 import nl.hsleiden.service.ResultService;
 
 public class ResultController {
     private static ResultController resultController;
     private final ResultService resultService;
+    private final SceneController sceneController;
+    private final ContentController contentController;
 
     private ResultController() {
         resultService = new ResultService();
+        sceneController = SceneController.getInstance();
+        contentController = ContentController.getInstance();
     }
 
     public synchronized static ResultController getInstance() {
@@ -18,6 +23,10 @@ public class ResultController {
             resultController = new ResultController();
         }
         return resultController;
+    }
+
+    public void switchToNextScreen(String fileName) {
+        sceneController.switchToNextScreen(fileName);
     }
 
     public void closeApplication(){
@@ -36,4 +45,11 @@ public class ResultController {
         resultService.getAll();
     }
 
+    public void sendContent() {
+        contentController.getContentById(contentController.getId());
+    }
+
+    public void showResultOnScreen(TextArea textArea, String text){
+        textArea.setText(text);
+    }
 }

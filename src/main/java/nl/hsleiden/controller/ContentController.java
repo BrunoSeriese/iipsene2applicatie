@@ -12,6 +12,7 @@ public class ContentController {
     private final SceneController sceneController;
     private final List<Content> contents = new ArrayList<>();
     private int contentId = 1;
+    private int lastContentId = 1;
 
     private ContentController() {
         contentService = new ContentService();
@@ -34,8 +35,11 @@ public class ContentController {
         contents.add(content);
     }
 
+    public void removeContent(Content content) {
+        contents.remove(content);
+    }
 
-    public int getId() {
+    public int getId(){
         return contentId;
     }
 
@@ -46,7 +50,7 @@ public class ContentController {
     }
 
     public void previousContent() {
-        this.contentId = 1;
+        this.contentId = lastContentId;
         Content content = getContent();
         String filename = contentService.getFilename(content);
         sceneController.switchToNextScreen(filename);
@@ -57,6 +61,9 @@ public class ContentController {
         this.contentId = id;
     }
 
+    public void lastContentId(int id) {
+        this.lastContentId = id;
+    }
 
     public Content getContent() {
         return getContentById(contentId);

@@ -1,15 +1,16 @@
 package nl.hsleiden.model;
 
-import java.util.Objects;
+public class Answer  {
 
-public class Answer {
     private final int id;
     private final String value;
+    private final int currentContentId;
     private final int nextContentId;
 
-    public Answer(int id, String value, int nextContentId) {
+    public Answer(int id, String value, int currentContentId, int nextContentId) {
         this.id = id;
         this.value = value;
+        this.currentContentId = currentContentId;
         this.nextContentId = nextContentId;
     }
 
@@ -21,36 +22,11 @@ public class Answer {
         return value;
     }
 
+    public int getCurrentContentId() {
+        return currentContentId;
+    }
+
     public int getNextContentId() {
         return nextContentId;
     }
-
-    public int id() {
-        return id;
-    }
-
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (Answer) obj;
-        return this.id == that.id &&
-                Objects.equals(this.value, that.value) &&
-                this.nextContentId == that.nextContentId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, value, nextContentId);
-    }
-
-    @Override
-    public String toString() {
-        return "Answer[" +
-                "id=" + id + ", " +
-                "value=" + value + ", " +
-                "nextContentId=" + nextContentId + ']';
-    }
-
 }

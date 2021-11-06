@@ -34,5 +34,11 @@ public class VideoView implements Initializable {
         videoController.embedVideo(url, webViewContainer);
     }
 
-
+    @FXML
+    public void onNextButtonClick() {
+        Content content = ContentController.getInstance().getContent();
+        int nextContentId = content.getAnswer().get(0).getNextContentId();
+        ContentController.getInstance().nextContentId(nextContentId);
+        ContentController.getInstance().nextContent();
+    }
 }
