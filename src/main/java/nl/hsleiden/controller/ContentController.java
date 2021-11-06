@@ -57,6 +57,7 @@ public class ContentController {
     }
 
     public void nextContentId(int id) {
+        lastContentId = contentId;
         this.contentId = id;
     }
 
