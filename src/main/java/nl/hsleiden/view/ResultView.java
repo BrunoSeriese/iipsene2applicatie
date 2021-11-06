@@ -2,7 +2,6 @@ package nl.hsleiden.view;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.controller.ResultController;
@@ -15,7 +14,7 @@ public class ResultView implements Initializable {
 
     private final ResultController resultController;
     public TextArea resultField;
-    public Button resultButton;
+
 
     public ResultView() {
         resultController = ResultController.getInstance();
@@ -27,10 +26,7 @@ public class ResultView implements Initializable {
         sendContent();
     }
 
-    @FXML
-    protected void onVideoButtonClick() {
-        resultController.switchToNextScreen("Video.fxml");
-    }
+
 
     @FXML
     protected void onExitButtonClick() {

@@ -3,7 +3,9 @@ package nl.hsleiden.view;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.web.WebView;
+import nl.hsleiden.controller.ContentController;
 import nl.hsleiden.controller.VideoController;
+import nl.hsleiden.model.Content;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,6 +14,9 @@ public class VideoView implements Initializable {
 
     private final VideoController videoController;
 
+    @FXML
+    public WebView webViewContainer;
+
     public VideoView() {
         videoController = VideoController.getInstance();
 
@@ -19,18 +24,15 @@ public class VideoView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            this.embedVideo();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        embedVideo();
     }
 
     @FXML
-    public WebView webViewContainer;
-
-    @FXML
-    public void embedVideo() throws InterruptedException {
-        videoController.embedVideo("https://www.youtube.com/embed/f9vZeLHTgk4", webViewContainer);
+    public void embedVideo() {
+        Content content = ContentController.getInstance().getContent();
+        String url = content.getValue();
+        videoController.embedVideo(url, webViewContainer);
     }
+
+
 }
