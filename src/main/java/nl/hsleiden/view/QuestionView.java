@@ -62,4 +62,5 @@ public class QuestionView implements Initializable {
             Answers.get(i).setId(String.valueOf(content.getAnswer().get(i).getNextContentId()));
         }
     }
+
 }
