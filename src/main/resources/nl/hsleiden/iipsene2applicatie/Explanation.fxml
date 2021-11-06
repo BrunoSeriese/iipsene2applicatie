@@ -16,7 +16,7 @@
          <Font size="26.0" />
       </font>
    </TextArea>
-   <Button fx:id="explanationNextBtn" alignment="TOP_LEFT" layoutX="630.0" layoutY="628.0" mnemonicParsing="false" onAction="#onNextButtonClick" prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Volgende">
+   <Button  alignment="TOP_LEFT" layoutX="630.0" layoutY="628.0" mnemonicParsing="false" onAction="#onNextButtonClick" prefHeight="20.0" prefWidth="200.0" styleClass="buttonStyle" stylesheets="@../css/main.css" text="Volgende">
       <font>
          <Font name="Neue Haas Grotesk Text Pro Bold" size="14.0" />
       </font>

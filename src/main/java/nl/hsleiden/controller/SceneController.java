@@ -13,10 +13,6 @@ import java.util.Objects;
 public class SceneController {
     private static SceneController sceneController;
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-
     private SceneController() {
 
     }
@@ -43,9 +39,9 @@ public class SceneController {
 
     public void switchToNextScreen(String fileName){
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource(fileName)));
-            stage = StageService.getInstance().getStage();
-            scene = new Scene(root);
+            Parent root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource(fileName)));
+            Stage stage = StageService.getInstance().getStage();
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }catch (IOException e){
