@@ -8,6 +8,7 @@ import nl.hsleiden.iipsene2applicatie.MainApplication;
 import nl.hsleiden.service.StageService;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class SceneController {
     private static SceneController sceneController;
@@ -33,7 +34,6 @@ public class SceneController {
      * </code>
      * @author Hicham El Faquir
      */
-
     public synchronized static SceneController getInstance() {
         if (sceneController == null) {
             sceneController = new SceneController();
@@ -43,7 +43,7 @@ public class SceneController {
 
     public void switchToNextScreen(String fileName){
         try {
-            root = FXMLLoader.load(MainApplication.class.getResource(fileName));
+            root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource(fileName)));
             stage = StageService.getInstance().getStage();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -51,7 +51,5 @@ public class SceneController {
         }catch (IOException e){
             e.printStackTrace();
         }
-
-
     }
 }

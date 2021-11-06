@@ -1,9 +1,5 @@
 package nl.hsleiden.controller;
 
-import javafx.event.ActionEvent;
-
-import java.io.IOException;
-
 public class MainController {
     private static MainController mainController;
     private final SceneController sceneController;
@@ -19,7 +15,7 @@ public class MainController {
         return mainController;
     }
 
-    public void switchToNextScreen(ActionEvent event, String fileName) throws IOException {
+    public void switchToNextScreen(String fileName) {
         sceneController.switchToNextScreen(fileName);
     }
 }

@@ -3,12 +3,8 @@ package nl.hsleiden.view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import nl.hsleiden.controller.MainController;
-import nl.hsleiden.observer.MainObserver;
-import nl.hsleiden.subject.MainSubject;
 
-import java.io.IOException;
-
-public class MainView implements MainObserver {
+public class MainView {
 
     private final MainController mainController;
 
@@ -17,12 +13,8 @@ public class MainView implements MainObserver {
     }
 
     @FXML
-    protected void onNextButtonClick(ActionEvent event) throws IOException {
-        mainController.switchToNextScreen(event,"Explanation.fxml");
+    protected void onNextButtonClick(ActionEvent actionEvent) {
+        mainController.switchToNextScreen("Explanation.fxml");
     }
 
-    @Override
-    public void update(MainSubject state) {
-
-    }
 }
