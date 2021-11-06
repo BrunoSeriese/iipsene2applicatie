@@ -30,7 +30,4 @@ public class Explanation implements Content {
         return answer;
     }
 
-    public void setAnswer(Answer answer) {
-        this.answer = answer;
-    }
 }
