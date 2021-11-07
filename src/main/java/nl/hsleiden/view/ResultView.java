@@ -12,25 +12,17 @@ import java.util.ResourceBundle;
 
 /**
  * Contains methods for the views.
+ *
  * @author Hicham El Faquir, Ryan Bhola
  */
 public class ResultView implements Initializable {
-
     private final ResultController resultController;
-    public TextArea resultField;
-
+    @FXML
+    private TextArea resultField;
 
     public ResultView() {
         resultController = ResultController.getInstance();
-
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        sendContent();
-    }
-
-
 
     @FXML
     protected void onExitButtonClick() {
@@ -41,5 +33,10 @@ public class ResultView implements Initializable {
     public void sendContent() {
         Content content = ContentController.getInstance().getContent();
         resultField.setText(content.getValue());
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        sendContent();
     }
 }

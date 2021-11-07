@@ -3,7 +3,7 @@ package nl.hsleiden.controller;
 import nl.hsleiden.service.QuestionService;
 
 /**
- * Controls the Question(View & Model).
+ * Controls(Redirects) the Question(View & Model).
  * @author Hicham El Faquir, Ryan Bhola, Bruno Seriese
  */
 public class QuestionController {
@@ -23,7 +23,7 @@ public class QuestionController {
         return questionController;
     }
 
-    public  void previousContent(){
+    public void previousContent(){
         contentController.previousContent();
     }
 

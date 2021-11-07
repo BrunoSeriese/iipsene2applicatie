@@ -3,7 +3,7 @@ package nl.hsleiden.controller;
 import nl.hsleiden.service.ExplanationService;
 
 /**
- * Controls the Explantion(View & Model).
+ * Controls(Redirects) the Explanation(View & Model).
  * @author Hicham El Faquir, Ryan Bhola, Bruno Seriese
  */
 public class ExplanationController {

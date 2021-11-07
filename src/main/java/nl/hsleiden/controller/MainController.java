@@ -1,7 +1,7 @@
 package nl.hsleiden.controller;
 
 /**
- * Controls the Main(View).
+ * Controls(Redirects) the Main(View).
  * @author Hicham El Faquir, Ryan Bhola
  */
 public class MainController {

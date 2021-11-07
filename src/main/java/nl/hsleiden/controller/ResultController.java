@@ -6,7 +6,7 @@ import javafx.scene.control.ButtonType;
 import nl.hsleiden.service.ResultService;
 
 /**
- * Controls the Result(View & Model).
+ * Controls(Redirects) the Result(View & Model).
  * @author Hicham El Faquir, Ryan Bhola, Bruno Seriese
  */
 public class ResultController {
@@ -24,6 +24,10 @@ public class ResultController {
         return resultController;
     }
 
+    /**
+     * When clicking on the 'close button' of the program, you are prompted with a confirmation message.
+     * @author Hicham El Faquir, Ryan Bhola
+     */
     public void closeApplication(){
         try{
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

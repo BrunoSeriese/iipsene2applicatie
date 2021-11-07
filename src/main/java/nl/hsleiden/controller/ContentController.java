@@ -47,7 +47,11 @@ public class ContentController {
     public void removeContent(Content content) {
         contents.remove(content);
     }
-
+    /**
+     * Gets the contentID of content called on.
+     * @return the ID of the corresponding content, on which this method is called upon.
+     * @author Bruno Seriese
+     */
     public int getId(){
         return contentId;
     }
@@ -105,7 +109,7 @@ public class ContentController {
      * Gets the content by the same id as the param.
      * @param id The content id to find
      * @return The content with the same id as the param
-     * @author Bruno Seriese
+     * @author Bruno Seriese, Ryan Bhola
      */
     public Content getContentById(int id) {
         for (Content content : contents) {

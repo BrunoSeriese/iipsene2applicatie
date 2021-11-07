@@ -41,14 +41,19 @@ public class SceneController {
         return sceneController;
     }
 
-    public void switchToNextScreen(String fileName){
+    /**
+     * General method for switching scenes, insert the fxml file name in parameter when using function to switch to that
+     * particular scene.
+     * @author Hicham El Faquir, Ryan Bhola
+     */
+    public void switchToNextScreen(String fileName) {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(MainApplication.class.getResource(fileName)));
             Stage stage = StageService.getInstance().getStage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
