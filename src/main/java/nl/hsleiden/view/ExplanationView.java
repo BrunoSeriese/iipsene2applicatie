@@ -27,6 +27,10 @@ public class ExplanationView implements Initializable {
         sendContent();
     }
 
+    /**
+     * Get the current content and set the explanation text for the current view
+     * @author Hicham El Faquir, Ryan Bhola
+     */
     @FXML
     public void sendContent() {
         Content content = ContentController.getInstance().getContent();
