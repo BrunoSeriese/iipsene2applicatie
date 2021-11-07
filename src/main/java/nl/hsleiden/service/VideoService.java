@@ -6,6 +6,10 @@ import nl.hsleiden.model.Video;
 
 import java.util.List;
 
+/**
+ * Contains code that shouldn't be on the Controller or DAO.
+ * @author Vincent Severin
+ */
 public class VideoService {
     private final VideoDAO videoDAO;
     private final ContentController contentController;

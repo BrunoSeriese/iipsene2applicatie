@@ -2,6 +2,10 @@ package nl.hsleiden.controller;
 
 import javafx.scene.web.WebView;
 
+/**
+ * Controls the Video(View & Model).
+ * @author Hicham El Faquir, Ryan Bhola, Bruno Seriese
+ */
 public class VideoController {
     private static VideoController videoController;
 

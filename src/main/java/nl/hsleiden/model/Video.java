@@ -3,6 +3,10 @@ package nl.hsleiden.model;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Model for the videos.
+ * @author Vincent Severin, Hicham El Faquir, Ryan Bhola, Bruno Seriese
+ */
 public  class Video implements Content {
     private final int id;
     private final String value;

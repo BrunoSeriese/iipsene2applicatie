@@ -2,6 +2,10 @@ package nl.hsleiden.model;
 
 import java.util.ArrayList;
 
+/**
+ * Model for the explanations.
+ * @author Vincent Severin
+ */
 public class Explanation implements Content {
 
     private final int id;

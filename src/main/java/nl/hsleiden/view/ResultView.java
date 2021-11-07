@@ -10,6 +10,10 @@ import nl.hsleiden.model.Content;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Contains methods for the views.
+ * @author Hicham El Faquir, Ryan Bhola
+ */
 public class ResultView implements Initializable {
 
     private final ResultController resultController;

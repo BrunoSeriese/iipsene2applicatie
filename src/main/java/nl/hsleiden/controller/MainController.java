@@ -1,5 +1,9 @@
 package nl.hsleiden.controller;
 
+/**
+ * Controls the Main(View).
+ * @author Hicham El Faquir, Ryan Bhola
+ */
 public class MainController {
     private static MainController mainController;
     private final SceneController sceneController;

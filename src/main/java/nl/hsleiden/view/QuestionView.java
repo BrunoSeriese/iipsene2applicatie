@@ -13,6 +13,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ * Contains methods for the views.
+ * @author Hicham El Faquir, Ryan Bhola
+ */
 public class QuestionView implements Initializable {
     private final QuestionController questionController;
 
@@ -34,6 +38,10 @@ public class QuestionView implements Initializable {
         retrieveContent();
     }
 
+    /**
+     * Gets the content and prints the data on the screen.
+     * @author Hicham El Faquir, Ryan Bhola
+     */
     private void retrieveContent() {
         Content content = ContentController.getInstance().getContent();
         questionContainer.setText(content.getValue());
@@ -45,6 +53,10 @@ public class QuestionView implements Initializable {
         }
     }
 
+    /**
+     * Detects which radiobutton was pressed and acts upon it.
+     * @author Hicham El Faquir, Ryan Bhola
+     */
     public void nextContent() {
         RadioButton chosenButton = (RadioButton) group.getSelectedToggle();
         for (int i = 0; i < RadioButtons.size(); i++) {

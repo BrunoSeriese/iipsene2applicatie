@@ -6,6 +6,10 @@ import nl.hsleiden.model.Question;
 
 import java.util.List;
 
+/**
+ * Contains code that shouldn't be on the Controller or DAO.
+ * @author Vincent Severin
+ */
 public class QuestionService {
     private final QuestionDAO questionDAO;
     private final ContentController contentController;

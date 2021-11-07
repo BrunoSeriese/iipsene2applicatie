@@ -6,6 +6,10 @@ import nl.hsleiden.model.Explanation;
 
 import java.util.List;
 
+/**
+ * Contains code that shouldn't be on the Controller or DAO.
+ * @author Vincent Severin
+ */
 public class ExplanationService {
     private final ExplanationDAO explanationDAO;
     private final ContentController contentController;

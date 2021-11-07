@@ -14,6 +14,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Handles all requests to the API for results.
+ * @author Vincent Severin
+ */
 public class ResultDAO implements DAO<Result> {
     private final String api = new ApiService().getApi("/results");
 

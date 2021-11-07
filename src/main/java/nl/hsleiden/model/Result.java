@@ -3,6 +3,10 @@ package nl.hsleiden.model;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Model for the results
+ * @author Vincent Severin, Hicham El Faquir, Ryan Bhola, Bruno Seriese
+ */
 public  class Result implements Content {
     private final int id;
     private final String value;

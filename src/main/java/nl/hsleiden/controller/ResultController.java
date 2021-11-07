@@ -5,6 +5,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import nl.hsleiden.service.ResultService;
 
+/**
+ * Controls the Result(View & Model).
+ * @author Hicham El Faquir, Ryan Bhola, Bruno Seriese
+ */
 public class ResultController {
     private static ResultController resultController;
     private final ResultService resultService;

@@ -1,10 +1,11 @@
 package nl.hsleiden.controller;
 
-import javafx.event.ActionEvent;
 import nl.hsleiden.service.ExplanationService;
 
-import java.io.IOException;
-
+/**
+ * Controls the Explantion(View & Model).
+ * @author Hicham El Faquir, Ryan Bhola, Bruno Seriese
+ */
 public class ExplanationController {
     private static ExplanationController explanationController;
     private final ExplanationService explanationService;

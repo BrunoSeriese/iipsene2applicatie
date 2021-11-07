@@ -2,6 +2,10 @@ package nl.hsleiden.service;
 
 import nl.hsleiden.model.*;
 
+/**
+ * Service to make the ContentController less bulky.
+ * @author Vincent Severin.
+ */
 public class ContentService {
 
     public String getFilename(Content content) {

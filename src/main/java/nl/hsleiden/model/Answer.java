@@ -2,6 +2,10 @@ package nl.hsleiden.model;
 
 import java.util.Objects;
 
+/**
+ * Model for the answers.
+ * @author Vincent Severin, Hicham El Faquir, Ryan Bhola, Bruno Seriese
+ */
 public class Answer {
     private final int id;
     private final String value;

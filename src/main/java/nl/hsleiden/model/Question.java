@@ -5,6 +5,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Model for the questions.
+ * @author Vincent Severin, Hicham El Faquir, Ryan Bhola, Bruno Seriese
+ */
 public  class Question implements Content, Serializable {
     @Serial
     private static final long serialVersionUID = 0L;

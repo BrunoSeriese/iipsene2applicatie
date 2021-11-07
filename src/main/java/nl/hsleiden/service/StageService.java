@@ -4,6 +4,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
+/**
+ * Makes it possible to get the Stage from anywhere in the code, even without an ActionEvent.
+ * @author Vincent Severin, Hicham El Faquir, Ryan Bhola
+ */
 public class StageService {
     private static StageService stageService;
     private Stage stage;
