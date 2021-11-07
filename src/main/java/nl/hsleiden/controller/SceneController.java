@@ -12,7 +12,7 @@ import java.util.Objects;
 
 /**
  * Controls the function to switch to a different view.
- * @author Hicham El Faquir, Ryan Bhola
+ * @author Hicham El Faquir, Ryan Bhola, Bruno Seriese
  */
 public class SceneController {
     private static SceneController sceneController;
@@ -40,6 +40,12 @@ public class SceneController {
         }
         return sceneController;
     }
+
+    /**
+     * switchToNextScreen(String fileName) enables switching to another fxml
+     * this by setting a new stage with the fxml as parameter
+     * @author Bruno Seriese
+     */
 
     public void switchToNextScreen(String fileName){
         try {
