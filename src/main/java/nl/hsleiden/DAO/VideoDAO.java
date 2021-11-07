@@ -14,6 +14,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Handles all requests to the API for videos.
+ * @author Vincent Severin
+ */
 public class VideoDAO implements DAO<Video> {
     private final String api = new ApiService().getApi("/videos");
 

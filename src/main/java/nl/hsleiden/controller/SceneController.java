@@ -10,6 +10,10 @@ import nl.hsleiden.service.StageService;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * Controls the function to switch to a different view.
+ * @author Hicham El Faquir, Ryan Bhola
+ */
 public class SceneController {
     private static SceneController sceneController;
 

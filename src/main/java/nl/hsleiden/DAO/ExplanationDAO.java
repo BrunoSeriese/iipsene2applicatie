@@ -14,6 +14,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Handles all requests to the API for explanations.
+ * @author Vincent Severin
+ */
 public class ExplanationDAO implements DAO<Explanation> {
     private final String api = new ApiService().getApi("/explanations");
 

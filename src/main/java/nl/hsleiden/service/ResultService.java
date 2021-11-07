@@ -6,6 +6,10 @@ import nl.hsleiden.model.Result;
 
 import java.util.List;
 
+/**
+ * Contains code that shouldn't be on the Controller or DAO.
+ * @author Vincent Severin
+ */
 public class ResultService {
     private final ResultDAO resultDAO;
     private final ContentController contentController;

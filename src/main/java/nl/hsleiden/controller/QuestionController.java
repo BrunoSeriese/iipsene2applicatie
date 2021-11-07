@@ -2,6 +2,10 @@ package nl.hsleiden.controller;
 
 import nl.hsleiden.service.QuestionService;
 
+/**
+ * Controls the Question(View & Model).
+ * @author Hicham El Faquir, Ryan Bhola, Bruno Seriese
+ */
 public class QuestionController {
     private static QuestionController questionController;
     private final QuestionService questionService;

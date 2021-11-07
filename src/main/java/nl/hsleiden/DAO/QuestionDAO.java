@@ -14,6 +14,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Handles all requests to the API for questions.
+ * @author Vincent Severin
+ */
 public class QuestionDAO implements DAO<Question> {
     private final String api = new ApiService().getApi("/questions");
 
