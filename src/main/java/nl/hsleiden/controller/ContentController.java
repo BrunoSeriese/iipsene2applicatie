@@ -8,7 +8,8 @@ import java.util.List;
 
 /**
  * The class that controls anything/everything about/around the content.
- * Mainly controls what contents there are and which is the current content.
+ * Mainly controls what contents there are on display and which is the current content.
+ * The current content is displayed to the user in conjunction with a corresponding view and fxml
  * @author Vincent Severin, Hicham El Faquir, Ryan Bhola, Bruno Seriese
  */
 public class ContentController {
